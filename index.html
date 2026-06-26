@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinton Etienne | Cybersecurity Portfolio</title>
+    <title>Clinton Etienne | SOC Analyst Portfolio</title>
 
     <style>
         * {
@@ -14,7 +14,7 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #0f172a;
+            background: #020617;
             color: #e5e7eb;
             line-height: 1.6;
         }
@@ -52,52 +52,42 @@
 
         .hero {
             padding: 90px 10%;
-            background: linear-gradient(135deg, #020617, #0f172a);
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 40px;
             align-items: center;
+            background:
+                radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 35%),
+                linear-gradient(135deg, #020617, #0f172a);
+        }
+
+        .badge {
+            color: #22c55e;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 3.7rem;
+            margin: 0;
             color: #ffffff;
         }
 
-        .hero h3 {
+        .hero h2 {
+            font-size: 2rem;
             color: #38bdf8;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            margin: 10px 0;
+        }
+
+        .hero h3 {
+            color: #cbd5e1;
+            font-weight: normal;
         }
 
         .hero p {
             max-width: 800px;
             font-size: 1.1rem;
             color: #cbd5e1;
-        }
-
-        .profile-card {
-            background-color: #111827;
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid #1e293b;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
-        }
-
-        .profile-card img {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #38bdf8;
-            margin-bottom: 15px;
-        }
-
-        .status {
-            color: #22c55e;
-            font-weight: bold;
         }
 
         .button {
@@ -116,6 +106,34 @@
             background-color: transparent;
             color: #38bdf8;
             border: 1px solid #38bdf8;
+        }
+
+        .profile-card {
+            background-color: #111827;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
+        }
+
+        .profile-card img {
+            width: 225px;
+            height: 225px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .profile-card h3 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            color: #cbd5e1;
+            margin: 5px 0;
         }
 
         section {
@@ -155,6 +173,16 @@
             color: #cbd5e1;
         }
 
+        .about-layout {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .about-layout p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -166,17 +194,22 @@
             padding: 25px;
             border-radius: 12px;
             border: 1px solid #1e293b;
-            transition: transform 0.2s ease, border 0.2s ease;
+            transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
             border: 1px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
         }
 
         .card h3 {
             color: #38bdf8;
             margin-top: 0;
+        }
+
+        .card p {
+            color: #cbd5e1;
         }
 
         .tag {
@@ -203,17 +236,10 @@
             font-weight: bold;
         }
 
-        .about-layout {
-            max-width: 900px;
-    margin: 0 auto
-        }
-
-        
-        
-
         .timeline {
             border-left: 3px solid #38bdf8;
             padding-left: 25px;
+            max-width: 950px;
         }
 
         .timeline-item {
@@ -225,6 +251,26 @@
             margin-bottom: 5px;
         }
 
+        .timeline-item p {
+            color: #cbd5e1;
+        }
+
+        .contact-box {
+            background-color: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 850px;
+        }
+
+        .contact-box p {
+            color: #cbd5e1;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+
         footer {
             text-align: center;
             padding: 25px;
@@ -233,11 +279,12 @@
             color: #94a3b8;
         }
 
-        a {
+        .footer-tagline {
             color: #38bdf8;
+            font-weight: bold;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -252,13 +299,12 @@
                 margin: 10px;
             }
 
-            .about-layout {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .hero h1 {
+                font-size: 2.6rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -273,7 +319,7 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#timeline">Journey</a>
+            <a href="#journey">Journey</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -281,8 +327,12 @@
 
 <section class="hero">
     <div>
-        <h1>SOC Analyst Portfolio</h1>
-        <h3>Cybersecurity Student | Incident Response | SIEM Monitoring</h3>
+        <p class="badge">● Seeking Entry-Level SOC Analyst Opportunities</p>
+
+        <h1>Clinton Etienne</h1>
+        <h2>Cybersecurity Portfolio</h2>
+        <h3>Aspiring SOC Analyst | Incident Response | SIEM Monitoring</h3>
+
         <p>
             I am transitioning into cybersecurity with a focus on SOC analysis,
             incident response, vulnerability management, and hands-on security monitoring.
@@ -295,10 +345,11 @@
     </div>
 
     <div class="profile-card">
-        <img src="resume_pic.jpg" alt="Professional photo of Clinton Etienne">
-        <h3>Clinton Etienne</h3>
-        <p class="status">● Available for Entry-Level Cybersecurity Roles</p>
-        <p>Aspiring SOC Analyst</p>
+        <img src="./resume_pic.jpg" alt="Professional photo of Clinton Etienne">
+        <h3>Learning. Building. Defending.</h3>
+        <p>Cybersecurity Student</p>
+        <p>Home Lab Builder</p>
+        <p>Future SOC Analyst</p>
     </div>
 </section>
 
@@ -332,24 +383,26 @@
     <h2>About Me</h2>
 
     <div class="about-layout">
-        
+        <p>
+            After nearly two decades solving technical problems in fabrication and welding,
+            I decided to transition into cybersecurity. My previous experience taught me how
+            to troubleshoot under pressure, think systematically, and document solutions clearly.
+            Those same skills apply directly to security operations, incident response,
+            and vulnerability management.
+        </p>
 
-        <div>
-            <p>
-                After nearly two decades solving technical problems in fabrication and welding,
-                I decided to transition into cybersecurity. My previous experience taught me how
-                to troubleshoot under pressure, think systematically, and document solutions clearly.
-                Those same skills apply directly to security operations, incident response,
-                and vulnerability management.
-            </p>
+        <p>
+            I am currently studying cybersecurity through Southern New Hampshire University
+            while building hands-on experience in a home lab environment. My current focus
+            includes SIEM monitoring, Linux security, network scanning, vulnerability analysis,
+            incident documentation, and defensive security practices.
+        </p>
 
-            <p>
-                I am currently studying cybersecurity through Southern New Hampshire University
-                while building hands-on experience in a home lab environment. My current focus
-                includes SIEM monitoring, Linux security, network scanning, vulnerability analysis,
-                incident documentation, and defensive security practices.
-            </p>
-        </div>
+        <p>
+            My goal is to continue developing the practical skills needed for an entry-level
+            SOC Analyst role by combining academic coursework with hands-on labs, technical
+            documentation, and real-world security concepts.
+        </p>
     </div>
 </section>
 
@@ -370,7 +423,7 @@
             <h3>SSH Authentication Failure Investigation</h3>
             <p>
                 Investigated failed SSH login attempts, identified source IP activity,
-                reviewed authentication logs, and documented containment steps.
+                reviewed authentication logs, and documented containment and remediation steps.
             </p>
             <span class="tag">Incident Response</span>
         </div>
@@ -432,10 +485,11 @@
         <span class="skill">Network Security</span>
         <span class="skill">SIEM Monitoring</span>
         <span class="skill">Security Documentation</span>
+        <span class="skill">Log Analysis</span>
     </div>
 </section>
 
-<section id="timeline">
+<section id="journey">
     <h2>Cybersecurity Journey</h2>
 
     <div class="timeline">
@@ -477,27 +531,30 @@
 <section id="contact">
     <h2>Contact</h2>
 
-    <p>
-        I am currently pursuing entry-level cybersecurity opportunities, especially
-        SOC Analyst, security monitoring, and incident response roles.
-    </p>
+    <div class="contact-box">
+        <p>
+            I am currently pursuing entry-level cybersecurity opportunities,
+            especially SOC Analyst, security monitoring, and incident response roles.
+        </p>
 
-    <p>
-        LinkedIn:
-        <a href="https://linkedin.com/in/Clinton-Etienne" target="_blank">
-            linkedin.com/in/Clinton-Etienne
-        </a>
-    </p>
+        <p>
+            LinkedIn:
+            <a href="https://linkedin.com/in/Clinton-Etienne" target="_blank">
+                linkedin.com/in/Clinton-Etienne
+            </a>
+        </p>
 
-    <p>
-        Portfolio:
-        <a href="https://clinton-etienne.github.io" target="_blank">
-            clinton-etienne.github.io
-        </a>
-    </p>
+        <p>
+            Portfolio:
+            <a href="https://clinton-etienne.github.io" target="_blank">
+                clinton-etienne.github.io
+            </a>
+        </p>
+    </div>
 </section>
 
 <footer>
+    <p class="footer-tagline">Learning. Building. Defending.</p>
     <p>© 2026 Clinton Etienne | Cybersecurity Portfolio</p>
 </footer>
 
