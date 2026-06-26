@@ -148,17 +148,48 @@
             padding-left: 12px;
         }
 
-        .dashboard {
+        .focus-grid,
+        .dashboard,
+        .cards {
             display: grid;
+            gap: 20px;
+        }
+
+        .focus-grid {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .dashboard {
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
+        }
+
+        .cards {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .focus-card,
+        .stat,
+        .card,
+        .contact-box {
+            background-color: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .focus-card h3,
+        .card h3 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+
+        .focus-card p,
+        .card p,
+        .contact-box p {
+            color: #cbd5e1;
         }
 
         .stat {
-            background-color: #111827;
-            border: 1px solid #1e293b;
-            padding: 22px;
-            border-radius: 12px;
             text-align: center;
         }
 
@@ -183,33 +214,15 @@
             font-size: 1.05rem;
         }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
         .card {
-            background-color: #111827;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #1e293b;
             transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .card:hover {
+        .card:hover,
+        .focus-card:hover {
             transform: translateY(-5px);
             border: 1px solid #38bdf8;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
-        }
-
-        .card h3 {
-            color: #38bdf8;
-            margin-top: 0;
-        }
-
-        .card p {
-            color: #cbd5e1;
         }
 
         .tag {
@@ -252,18 +265,6 @@
         }
 
         .timeline-item p {
-            color: #cbd5e1;
-        }
-
-        .contact-box {
-            background-color: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 25px;
-            max-width: 850px;
-        }
-
-        .contact-box p {
             color: #cbd5e1;
         }
 
@@ -317,6 +318,7 @@
         <h2>Clinton Etienne</h2>
         <div>
             <a href="#about">About</a>
+            <a href="#focus">Focus</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#journey">Journey</a>
@@ -330,14 +332,13 @@
         <p class="badge">● Seeking Entry-Level SOC Analyst Opportunities</p>
 
         <h1>Clinton Etienne</h1>
-        <h2>Cybersecurity Portfolio</h2>
-        <h3>Aspiring SOC Analyst | Incident Response | SIEM Monitoring</h3>
+        <h2>SOC Analyst Portfolio</h2>
+        <h3>Turning nearly 20 years of technical problem-solving into a career in cybersecurity.</h3>
 
         <p>
-            I am transitioning into cybersecurity with a focus on SOC analysis,
-            incident response, vulnerability management, and hands-on security monitoring.
-            This portfolio highlights my home lab work, SIEM investigations,
-            vulnerability assessments, and technical documentation.
+            I am building practical cybersecurity skills through hands-on labs,
+            SIEM investigations, vulnerability assessments, incident response documentation,
+            and continuous learning.
         </p>
 
         <a class="button" href="#projects">View Projects</a>
@@ -350,6 +351,44 @@
         <p>Cybersecurity Student</p>
         <p>Home Lab Builder</p>
         <p>Future SOC Analyst</p>
+    </div>
+</section>
+
+<section id="focus">
+    <h2>Current Focus</h2>
+
+    <div class="focus-grid">
+        <div class="focus-card">
+            <h3>🛡️ Incident Response</h3>
+            <p>
+                Investigating security events, documenting findings, and practicing
+                containment, remediation, and lessons learned.
+            </p>
+        </div>
+
+        <div class="focus-card">
+            <h3>📊 SIEM Monitoring</h3>
+            <p>
+                Using Wazuh to analyze logs, review alerts, and identify suspicious
+                activity in a home lab environment.
+            </p>
+        </div>
+
+        <div class="focus-card">
+            <h3>🔍 Vulnerability Management</h3>
+            <p>
+                Identifying security risks with vulnerability scanning tools and
+                developing practical remediation recommendations.
+            </p>
+        </div>
+
+        <div class="focus-card">
+            <h3>💻 Home Lab Development</h3>
+            <p>
+                Building hands-on skills with Kali Linux, Ubuntu Server, Metasploitable2,
+                VirtualBox, Nmap, Metasploit, Wireshark, and Wazuh.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -538,9 +577,23 @@
         </p>
 
         <p>
+            Email:
+            <a href="mailto:cjetienne05@gmail.com">
+                cjetienne05@gmail.com
+            </a>
+        </p>
+
+        <p>
             LinkedIn:
             <a href="https://linkedin.com/in/Clinton-Etienne" target="_blank">
                 linkedin.com/in/Clinton-Etienne
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/Clinton-Etienne" target="_blank">
+                github.com/Clinton-Etienne
             </a>
         </p>
 
