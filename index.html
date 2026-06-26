@@ -1,29 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinton Etienne | Cybersecurity Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #020617;
+            padding: 20px 10%;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+            margin: 0;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            padding: 90px 10%;
+            background: linear-gradient(135deg, #020617, #0f172a);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .hero h3 {
+            color: #38bdf8;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 10px;
+            padding: 12px 20px;
+            background-color: #38bdf8;
+            color: #020617;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .button.secondary {
+            background-color: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        section h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 12px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #111827;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background-color: #1e293b;
+            padding: 10px 14px;
+            border-radius: 20px;
+            color: #e5e7eb;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #020617;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Clinton Etienne</h1>
-    <h2>Aspiring SOC Analyst | Cybersecurity Student</h2>
 
-    <p>
-        Welcome to my cybersecurity portfolio. I am transitioning into cybersecurity
-        with a focus on SOC analysis, incident response, vulnerability management,
-        and hands-on security lab work.
-    </p>
+    <header>
+        <nav>
+            <h2>Clinton Etienne</h2>
+            <div>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-    <h3>Portfolio Projects</h3>
-    <ul>
-        <li>Wazuh SIEM Incident Investigations</li>
-        <li>Metasploitable2 Exploitation Labs</li>
-        <li>OpenVAS Vulnerability Assessments</li>
-        <li>Wireshark Traffic Analysis</li>
-    </ul>
+    <section class="hero">
+        <h1>Cybersecurity Portfolio</h1>
+        <h3>Aspiring SOC Analyst | Cybersecurity Student | Hands-On Lab Builder</h3>
+        <p>
+            I am transitioning into cybersecurity with a focus on SOC analysis,
+            incident response, vulnerability management, and hands-on security monitoring.
+            This portfolio showcases my cybersecurity labs, incident investigations,
+            vulnerability assessments, and technical projects.
+        </p>
 
-    <h3>Contact</h3>
-    <p>
-        LinkedIn: linkedin.com/in/Clinton-Etienne
-    </p>
+        <a class="button" href="#projects">View Projects</a>
+        <a class="button secondary" href="https://linkedin.com/in/Clinton-Etienne" target="_blank">LinkedIn</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            After years of solving technical problems in fabrication and welding,
+            I decided to transition into cybersecurity. I am currently studying
+            cybersecurity through Southern New Hampshire University and building
+            hands-on experience through home lab environments.
+        </p>
+        <p>
+            My current focus is developing practical skills in security monitoring,
+            SIEM investigations, vulnerability scanning, Linux security, network traffic
+            analysis, and incident response documentation.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Portfolio Projects</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Wazuh SIEM Home Lab</h3>
+                <p>
+                    Built a home lab using Wazuh, Ubuntu Server, Kali Linux,
+                    and monitored security events from simulated attacks.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>SSH Authentication Failure Investigation</h3>
+                <p>
+                    Investigated failed SSH login attempts, identified source IP activity,
+                    reviewed authentication logs, and documented containment and remediation steps.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Metasploitable2 Exploitation Lab</h3>
+                <p>
+                    Used Kali Linux, Nmap, and Metasploit to identify and exploit vulnerable services
+                    in a controlled lab environment, then documented mitigation recommendations.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>OpenVAS Vulnerability Assessment</h3>
+                <p>
+                    Performed vulnerability scans, reviewed findings, assessed risk,
+                    and created remediation recommendations for vulnerable systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Wireshark Traffic Analysis</h3>
+                <p>
+                    Analyzed packet captures to identify suspicious network activity,
+                    authentication attempts, and traffic patterns.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Incident Response Documentation</h3>
+                <p>
+                    Created SOC-style incident reports with timelines, indicators,
+                    security impact, containment, remediation, and lessons learned.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+
+        <div class="skills">
+            <span class="skill">Wazuh</span>
+            <span class="skill">Kali Linux</span>
+            <span class="skill">Ubuntu Server</span>
+            <span class="skill">Windows Server</span>
+            <span class="skill">Nmap</span>
+            <span class="skill">Metasploit</span>
+            <span class="skill">Wireshark</span>
+            <span class="skill">OpenVAS</span>
+            <span class="skill">VirtualBox</span>
+            <span class="skill">Linux CLI</span>
+            <span class="skill">Incident Response</span>
+            <span class="skill">Vulnerability Management</span>
+            <span class="skill">Network Security</span>
+            <span class="skill">SIEM Monitoring</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            I am currently pursuing entry-level cybersecurity opportunities,
+            especially SOC Analyst and security monitoring roles.
+        </p>
+        <p>
+            LinkedIn:
+            <a href="https://linkedin.com/in/Clinton-Etienne" target="_blank" style="color:#38bdf8;">
+                linkedin.com/in/Clinton-Etienne
+            </a>
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Clinton Etienne | Cybersecurity Portfolio</p>
+    </footer>
+
 </body>
 </html>
