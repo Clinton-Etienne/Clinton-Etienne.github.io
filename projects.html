@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Clinton Etienne</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Clinton Etienne</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="projects-page">
+
+    <section class="page-header">
+      <h2>Cybersecurity Projects</h2>
+      <p>
+        This page highlights my hands-on cybersecurity work, including SOC investigations,
+        Wazuh SIEM alerts, incident reports, vulnerability analysis, and home lab projects.
+      </p>
+    </section>
+
+    <section class="project-grid">
+
+      <div class="project-card">
+        <h3>Wazuh Home SOC Lab</h3>
+        <p>
+          Built a home SOC lab using Wazuh, Kali Linux, Ubuntu Server, and VirtualBox
+          to monitor security events, investigate alerts, and document incidents.
+        </p>
+        <p><strong>Tools:</strong> Wazuh, Kali Linux, Ubuntu, VirtualBox</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>IR-2026-001: Linux Privilege Escalation</h3>
+        <p>
+          Investigated Linux account changes, sudo activity, password modification,
+          and possible privilege escalation using Wazuh alert data.
+        </p>
+        <p><strong>Focus:</strong> Privilege Escalation, Account Changes, MITRE ATT&CK</p>
+        <a href="#" class="btn">View Incident Report</a>
+      </div>
+
+      <div class="project-card">
+        <h3>IR-2026-002: SSH Authentication Failures</h3>
+        <p>
+          Documented repeated SSH login failures from an attacker machine against
+          a monitored Ubuntu target system.
+        </p>
+        <p><strong>Focus:</strong> Brute Force, Credential Access, SSH Logs</p>
+        <a href="#" class="btn">View Incident Report</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Metasploitable2 Exploitation Lab</h3>
+        <p>
+          Performed vulnerability discovery and exploitation against Metasploitable2
+          in a controlled lab environment.
+        </p>
+        <p><strong>Tools:</strong> Nmap, Metasploit, Kali Linux</p>
+        <a href="#" class="btn">View Walkthrough</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Clinton Etienne. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
