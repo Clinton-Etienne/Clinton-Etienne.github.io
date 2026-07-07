@@ -1,84 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Clinton Etienne</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Clinton Etienne</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
+<header>
+
     <nav>
-      <h1>Clinton Etienne</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+
+        <h1>Clinton Etienne</h1>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="projects.html" class="active">Projects</a></li>
+
+            <li><a href="resume.pdf" target="_blank">Resume</a></li>
+
+            <li><a href="index.html#contact">Contact</a></li>
+
+        </ul>
+
     </nav>
-  </header>
 
-  <main class="projects-page">
+</header>
 
-    <section class="page-header">
-      <h2>Cybersecurity Projects</h2>
-      <p>
-        This page highlights my hands-on cybersecurity work, including SOC investigations,
-        Wazuh SIEM alerts, incident reports, vulnerability analysis, and home lab projects.
-      </p>
-    </section>
+<main>
 
-    <section class="project-grid">
+<section class="page-header">
 
-      <div class="project-card">
+    <h2>Cybersecurity Projects</h2>
+
+    <p>
+        Welcome to my cybersecurity portfolio. These projects showcase hands-on
+        experience with security monitoring, incident response, vulnerability
+        assessment, and offensive security in my home lab.
+    </p>
+
+</section>
+
+<section class="project-grid">
+
+    <div class="project-card">
+
         <h3>Wazuh Home SOC Lab</h3>
-        <p>
-          Built a home SOC lab using Wazuh, Kali Linux, Ubuntu Server, and VirtualBox
-          to monitor security events, investigate alerts, and document incidents.
-        </p>
-        <p><strong>Tools:</strong> Wazuh, Kali Linux, Ubuntu, VirtualBox</p>
-        <a href="#" class="btn">View Project</a>
-      </div>
 
-      <div class="project-card">
-        <h3>IR-2026-001: Linux Privilege Escalation</h3>
         <p>
-          Investigated Linux account changes, sudo activity, password modification,
-          and possible privilege escalation using Wazuh alert data.
+            Built and configured a Security Operations Center (SOC) home lab using
+            Wazuh, Kali Linux, Ubuntu Server, VirtualBox, and Windows systems to
+            investigate security events and improve detection capabilities.
         </p>
-        <p><strong>Focus:</strong> Privilege Escalation, Account Changes, MITRE ATT&CK</p>
-        <a href="#" class="btn">View Incident Report</a>
-      </div>
 
-      <div class="project-card">
-        <h3>IR-2026-002: SSH Authentication Failures</h3>
+        <p><strong>Skills:</strong> SIEM • Linux • Log Analysis • Threat Detection</p>
+
+        <a href="#" class="button">View Project</a>
+
+    </div>
+
+    <div class="project-card">
+
+        <h3>IR-2026-001<br>Linux Privilege Escalation Investigation</h3>
+
         <p>
-          Documented repeated SSH login failures from an attacker machine against
-          a monitored Ubuntu target system.
+            Investigated account creation, password changes, sudo activity, and
+            privilege escalation events collected by Wazuh.
         </p>
-        <p><strong>Focus:</strong> Brute Force, Credential Access, SSH Logs</p>
-        <a href="#" class="btn">View Incident Report</a>
-      </div>
 
-      <div class="project-card">
+        <p><strong>MITRE ATT&CK:</strong> Privilege Escalation</p>
+
+        <a href="#" class="button">View Incident Report</a>
+
+    </div>
+
+    <div class="project-card">
+
+        <h3>IR-2026-002<br>SSH Authentication Failure Investigation</h3>
+
+        <p>
+            Investigated repeated SSH login failures against an Ubuntu server,
+            documented attacker behavior, and recommended containment and
+            remediation steps.
+        </p>
+
+        <p><strong>MITRE ATT&CK:</strong> Credential Access</p>
+
+        <a href="#" class="button">View Incident Report</a>
+
+    </div>
+
+    <div class="project-card">
+
         <h3>Metasploitable2 Exploitation Lab</h3>
+
         <p>
-          Performed vulnerability discovery and exploitation against Metasploitable2
-          in a controlled lab environment.
+            Performed reconnaissance, vulnerability identification, and exploitation
+            against intentionally vulnerable systems using Kali Linux and Metasploit.
         </p>
-        <p><strong>Tools:</strong> Nmap, Metasploit, Kali Linux</p>
-        <a href="#" class="btn">View Walkthrough</a>
-      </div>
 
-    </section>
+        <p><strong>Skills:</strong> Nmap • Metasploit • Linux • Enumeration</p>
 
-  </main>
+        <a href="#" class="button">View Walkthrough</a>
 
-  <footer>
-    <p>&copy; 2026 Clinton Etienne. All Rights Reserved.</p>
-  </footer>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>&copy; 2026 Clinton Etienne | Cybersecurity Portfolio</p>
+
+</footer>
 
 </body>
 </html>
