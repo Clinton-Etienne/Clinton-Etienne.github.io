@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+header {
+  background: rgba(2, 6, 23, 0.95);
+  padding: 18px 10%;
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1,
+nav h2 {
+  color: #38bdf8;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+  color: #38bdf8;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+section h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-left: 4px solid #38bdf8;
+  padding-left: 12px;
+}
+
+.page-header p {
+  color: #cbd5e1;
+  max-width: 900px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 12px 20px;
+  background-color: #38bdf8;
+  color: #020617;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button.secondary {
+  background-color: transparent;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.case-card {
+  background-color: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 25px;
+  transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+.case-card h3 {
+  color: #38bdf8;
+  margin-top: 0;
+}
+
+.case-card p {
+  color: #cbd5e1;
+}
+
+.case-label {
+  display: inline-block;
+  background-color: #1e293b;
+  color: #93c5fd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.case-label.high {
+  color: #fecaca;
+  background-color: #7f1d1d;
+}
+
+.case-label.medium {
+  color: #fed7aa;
+  background-color: #7c2d12;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #020617;
+  border-top: 1px solid #1e293b;
+  color: #94a3b8;
+}
+
+@media (max-width: 850px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
