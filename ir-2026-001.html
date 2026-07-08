@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IR-2026-001 | Linux Privilege Escalation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <h1>Clinton Etienne</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.pdf" target="_blank">Resume</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-header">
+  <p class="case-label high">High Severity</p>
+  <h2>IR-2026-001: Linux Privilege Escalation Investigation</h2>
+  <p>
+    A SOC-style incident report documenting account changes, sudo activity,
+    password modification, and potential privilege escalation activity detected
+    through Wazuh in a controlled home lab environment.
+  </p>
+</section>
+
+<section class="case-card">
+  <h3>Incident Summary</h3>
+  <p>
+    This investigation focused on Linux security events generated from an Ubuntu
+    target endpoint monitored by Wazuh. The activity included new account creation,
+    sudo activity, password modification, and elevated privilege usage.
+  </p>
+
+  <p><strong>Status:</strong> Closed</p>
+  <p><strong>Environment:</strong> Wazuh Manager, Ubuntu Server, Kali Linux, VirtualBox</p>
+  <p><strong>Primary Focus:</strong> Privilege Escalation and Persistence</p>
+</section>
+
+<section class="case-card">
+  <h3>MITRE ATT&CK Mapping</h3>
+  <p><strong>Tactic:</strong> Privilege Escalation</p>
+  <p><strong>Tactic:</strong> Persistence</p>
+  <p>
+    The observed activity could indicate an attacker attempting to gain or maintain
+    elevated access through local account activity and sudo usage.
+  </p>
+</section>
+
+<section class="case-card">
+  <h3>Investigation Details</h3>
+  <p>
+    Wazuh generated alerts related to Linux account and privilege activity on the
+    monitored Ubuntu endpoint. The events were reviewed to determine whether the
+    activity represented authorized administrative behavior or suspicious activity
+    requiring containment.
+  </p>
+
+  <p>
+    Key indicators included account modification, password changes, sudo execution,
+    and activity associated with elevated privileges.
+  </p>
+</section>
+
+<section class="case-card">
+  <h3>Containment and Remediation</h3>
+  <p>
+    Recommended containment actions included reviewing the affected user account,
+    validating whether the account changes were authorized, restricting unnecessary
+    sudo access, and reviewing authentication logs for additional suspicious activity.
+  </p>
+
+  <p>
+    Remediation included enforcing least privilege, reviewing sudoers configuration,
+    improving monitoring for account changes, and documenting all administrative
+    activity.
+  </p>
+</section>
+
+<section class="case-card">
+  <h3>Lessons Learned</h3>
+  <p>
+    This investigation helped reinforce the importance of monitoring Linux privilege
+    activity, reviewing sudo usage, and documenting account changes. Even in a lab
+    environment, these alerts demonstrate how SIEM tools can help identify behavior
+    that may lead to unauthorized access or persistence.
+  </p>
+</section>
+
+<section>
+  <a href="projects.html" class="button secondary">Back to Projects</a>
+  <a href="#" class="button">Download Incident Report</a>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Clinton Etienne | Cybersecurity Portfolio</p>
+</footer>
+
+</body>
+</html>
