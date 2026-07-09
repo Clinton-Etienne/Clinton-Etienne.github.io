@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IR-2026-002 | SSH Brute Force Detection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="nav-logo" />
+        <span>Clinton Etienne</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="home-lab.html">Home Lab</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero v4-hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring" class="hero-logo" />
+
+        <p class="eyebrow">Incident Report</p>
+        <h1>IR-2026-002</h1>
+        <h2>SSH Brute Force Detection</h2>
+
+        <p class="hero-summary">
+          Investigation of repeated failed SSH authentication attempts detected by Wazuh
+          against a monitored Ubuntu Server in a controlled home lab environment.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="IR-2026-002_SSH_Brute_Force.pdf" class="btn primary-btn" target="_blank">Download PDF</a>
+          <a href="projects.html" class="btn secondary-btn">Back to Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="soc-overview section">
+      <div class="section-header">
+        <p class="eyebrow">Case Summary</p>
+        <h2>Incident Details</h2>
+      </div>
+
+      <div class="stats-section">
+        <div class="stat-card">
+          <h3>Medium</h3>
+          <p>Severity</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Closed</h3>
+          <p>Status</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Wazuh</h3>
+          <p>SIEM Platform</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>T1110.001</h3>
+          <p>Password Guessing</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="project-card">
+        <h3>Executive Summary</h3>
+        <p>
+          Wazuh detected repeated failed SSH authentication attempts originating from
+          a Kali Linux attacker system against a monitored Ubuntu Server. The activity
+          included multiple username attempts, which indicated password guessing rather
+          than normal user error.
+        </p>
+
+        <p>
+          No successful authentication was identified. The incident was classified as
+          a medium-severity credential access attempt and closed after confirming that
+          no compromise, persistence, or privilege escalation occurred.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Timeline</p>
+        <h2>Investigation Timeline</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>17:07:51</h3>
+          <p>Initial failed SSH login detected against the Ubuntu target endpoint.</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Repeated Attempts</h3>
+          <p>Additional failed SSH authentication attempts observed from the same source host.</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Username Changes</h3>
+          <p>Attempts included usernames such as clinton, administrator, and testuser.</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Incident Closed</h3>
+          <p>No successful login, persistence, or privilege escalation activity was identified.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Indicators</p>
+        <h2>Indicators of Compromise</h2>
+      </div>
+
+      <div class="project-card">
+        <div class="card-meta">
+          <span><strong>Source IP:</strong> 192.168.56.104</span>
+          <span><strong>Source System:</strong> Kali Linux attacker workstation</span>
+          <span><strong>Target System:</strong> Ubuntu Server / ubuntu-target</span>
+          <span><strong>Protocol:</strong> SSH</span>
+          <span><strong>Usernames:</strong> clinton, administrator, testuser</span>
+          <span><strong>Activity:</strong> Multiple failed authentication attempts</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">MITRE ATT&CK</p>
+        <h2>Technique Mapping</h2>
+      </div>
+
+      <div class="project-card">
+        <div class="card-meta">
+          <span><strong>Tactic:</strong> Credential Access</span>
+          <span><strong>Technique:</strong> Brute Force - Password Guessing</span>
+          <span><strong>Technique ID:</strong> T1110.001</span>
+          <span><strong>Reason Applied:</strong> The attacker attempted repeated SSH authentication using multiple usernames.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="project-card">
+        <h3>Analyst Investigation</h3>
+        <p>
+          Review of the Wazuh alerts and Linux authentication activity showed repeated
+          failed login attempts from a single source host. The use of multiple usernames
+          increased confidence that the activity was malicious password guessing rather
+          than a normal user mistyping a password.
+        </p>
+
+        <p>
+          The investigation did not identify any successful SSH login from the attacker
+          system. No follow-on activity, privilege escalation, persistence, or lateral
+          movement was observed.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Containment</h3>
+          <p>
+            Recommended containment actions include blocking the source IP if activity
+            continues, reviewing SSH access policy, enabling Fail2Ban, and enforcing
+            strong authentication controls.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Recovery</h3>
+          <p>
+            No recovery actions were required because the attacker did not successfully
+            authenticate or gain access to the system.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Lessons Learned</h3>
+          <p>
+            Repeated failed logins from a single source, especially against multiple
+            usernames, should be treated as suspicious and investigated quickly.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Skills Demonstrated</h3>
+          <p>
+            Wazuh SIEM analysis, Linux authentication log review, SSH monitoring,
+            MITRE ATT&CK mapping, IOC identification, and incident documentation.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="footer-logo" />
+    <p><strong>CE Security Monitoring</strong></p>
+    <p>Monitoring • Detection • Incident Response</p>
+    <p>© 2026 Clinton Etienne</p>
+  </footer>
+</body>
+</html>
