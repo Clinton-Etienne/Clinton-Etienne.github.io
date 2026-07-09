@@ -11,7 +11,7 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html" class="nav-brand">
-        <img src="assets/logo/ce-security-logo.png" alt="CE Security Logo" class="nav-logo" />
+        <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="nav-logo" />
         <span>Clinton Etienne</span>
       </a>
 
@@ -26,11 +26,14 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero v4-hero">
+      <div class="hero-overlay"></div>
+
       <div class="hero-content">
-        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring Logo" class="hero-logo" />
+        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring" class="hero-logo" />
 
         <p class="eyebrow">CE Security Monitoring</p>
+
         <h1>Clinton Etienne</h1>
         <h2>SOC Analyst Portfolio</h2>
 
@@ -39,101 +42,181 @@
         </p>
 
         <p class="hero-summary">
-          Building hands-on cybersecurity experience through home lab development,
-          SIEM investigations, Linux and Windows monitoring, and documented incident response.
+          Hands-on cybersecurity portfolio focused on SIEM investigations,
+          home lab security monitoring, Linux and Windows analysis, and
+          professional incident response documentation.
         </p>
 
         <div class="hero-buttons">
-          <a href="projects.html" class="btn primary-btn">View My Work</a>
-          <a href="resume.pdf" class="btn secondary-btn" target="_blank">Download Resume</a>
+          <a href="projects.html" class="btn primary-btn">View Investigations</a>
+          <a href="home-lab.html" class="btn secondary-btn">Explore Home Lab</a>
+          <a href="resume.pdf" class="btn ghost-btn" target="_blank">Download Resume</a>
         </div>
       </div>
     </section>
 
-    <section class="stats-section">
-      <div class="stat-card">
-        <h3>2</h3>
-        <p>Incident Reports</p>
+    <section class="soc-overview section">
+      <div class="section-header">
+        <p class="eyebrow">SOC Dashboard</p>
+        <h2>Portfolio Overview</h2>
       </div>
 
-      <div class="stat-card">
-        <h3>4+</h3>
-        <p>Home Lab Projects</p>
+      <div class="stats-section">
+        <div class="stat-card">
+          <h3>2</h3>
+          <p>Incident Reports</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>4+</h3>
+          <p>Home Lab Projects</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>6+</h3>
+          <p>MITRE Techniques</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Wazuh</h3>
+          <p>Primary SIEM</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section featured-section">
+      <div class="section-header">
+        <p class="eyebrow">Case Files</p>
+        <h2>Featured SOC Investigations</h2>
       </div>
 
-      <div class="stat-card">
-        <h3>6+</h3>
-        <p>MITRE Techniques</p>
-      </div>
+      <div class="project-grid">
+        <article class="project-card incident-card">
+          <div class="card-topline">
+            <span class="incident-id">IR-2026-001</span>
+            <span class="badge medium">Medium</span>
+          </div>
 
-      <div class="stat-card">
-        <h3>Wazuh</h3>
-        <p>Primary SIEM Platform</p>
+          <h3>Linux Privilege Escalation</h3>
+
+          <p>
+            Investigated suspicious account changes, privilege elevation, and Linux
+            authentication activity detected by Wazuh in a monitored lab environment.
+          </p>
+
+          <div class="card-meta">
+            <span>Status: Closed</span>
+            <span>Platform: Wazuh</span>
+            <span>Category: Privilege Escalation</span>
+          </div>
+
+          <a href="IR-2026-001_Linux_Privilege_Escalation.html" class="card-link">
+            View Investigation →
+          </a>
+        </article>
+
+        <article class="project-card incident-card">
+          <div class="card-topline">
+            <span class="incident-id">IR-2026-002</span>
+            <span class="badge medium">Medium</span>
+          </div>
+
+          <h3>SSH Brute Force Detection</h3>
+
+          <p>
+            Investigated repeated failed SSH authentication attempts from a Kali Linux
+            attacker against an Ubuntu Server monitored through Wazuh SIEM.
+          </p>
+
+          <div class="card-meta">
+            <span>Status: Closed</span>
+            <span>Platform: Wazuh</span>
+            <span>Category: Credential Access</span>
+          </div>
+
+          <a href="IR-2026-002_SSH_Brute_Force.html" class="card-link">
+            View Investigation →
+          </a>
+        </article>
       </div>
     </section>
 
     <section class="section about-section">
-      <h2>About This Portfolio</h2>
+      <div class="section-header">
+        <p class="eyebrow">About the Analyst</p>
+        <h2>Technical Background</h2>
+      </div>
 
-      <p>
-        This portfolio documents my transition into cybersecurity with a focus on
-        SOC analysis, security monitoring, and incident response. My work includes
-        hands-on investigations from a self-built home lab using tools such as Wazuh,
-        Kali Linux, Ubuntu Server, Windows systems, VirtualBox, and MITRE ATT&CK.
-      </p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Problem-Solving Background</h3>
+          <p>
+            Nearly 20 years of hands-on technical work taught me how to troubleshoot
+            complex systems, document findings, and work through problems under pressure.
+          </p>
+        </div>
 
-      <p>
-        Each incident report is written as a professional case file, showing the
-        detection, investigation, indicators of compromise, containment steps,
-        lessons learned, and skills demonstrated during the investigation.
-      </p>
+        <div class="about-card">
+          <h3>Cybersecurity Focus</h3>
+          <p>
+            My current focus is SOC analysis, security monitoring, incident response,
+            Linux and Windows log analysis, and practical threat detection workflows.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Home Lab Development</h3>
+          <p>
+            I use a self-built cybersecurity lab to generate realistic events, analyze
+            alerts, map activity to MITRE ATT&CK, and create professional case reports.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="section featured-section">
-      <h2>Featured SOC Investigations</h2>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <span class="badge medium">Medium Severity</span>
-          <h3>IR-2026-001</h3>
-          <h4>Linux Privilege Escalation</h4>
+    <section class="section lab-preview">
+      <div class="lab-content">
+        <div>
+          <p class="eyebrow">Home Lab</p>
+          <h2>Enterprise-Style SOC Lab</h2>
           <p>
-            Investigated suspicious account changes and privilege escalation activity
-            detected by Wazuh on a monitored Linux endpoint.
+            My lab includes Wazuh SIEM, Linux endpoints, Kali Linux attacker systems,
+            VirtualBox networking, and documented investigations based on real alert data.
           </p>
-          <a href="IR-2026-001_Linux_Privilege_Escalation.html" class="card-link">View Investigation</a>
-        </article>
+          <a href="home-lab.html" class="btn primary-btn">Explore Lab Architecture</a>
+        </div>
 
-        <article class="project-card">
-          <span class="badge medium">Medium Severity</span>
-          <h3>IR-2026-002</h3>
-          <h4>SSH Brute Force Detection</h4>
-          <p>
-            Investigated repeated failed SSH authentication attempts from a Kali Linux
-            attacker against an Ubuntu Server monitored by Wazuh.
-          </p>
-          <a href="IR-2026-002_SSH_Brute_Force.html" class="card-link">View Investigation</a>
-        </article>
+        <img src="assets/logo/ce-security-github-banner.png" alt="CE Security Banner" class="lab-preview-image" />
       </div>
     </section>
 
     <section class="section skills-section">
-      <h2>Core Skills Demonstrated</h2>
+      <div class="section-header">
+        <p class="eyebrow">Skills</p>
+        <h2>Core Skills Demonstrated</h2>
+      </div>
 
       <div class="skills-grid">
         <span>Wazuh SIEM</span>
         <span>Linux Log Analysis</span>
+        <span>Windows Security</span>
         <span>Incident Response</span>
         <span>MITRE ATT&CK</span>
         <span>SSH Monitoring</span>
         <span>Threat Detection</span>
+        <span>IOC Identification</span>
         <span>VirtualBox Labs</span>
+        <span>Kali Linux</span>
         <span>Security Documentation</span>
+        <span>Network Fundamentals</span>
       </div>
     </section>
 
     <section class="section contact-section" id="contact">
-      <h2>Contact</h2>
+      <div class="section-header">
+        <p class="eyebrow">Contact</p>
+        <h2>Connect With Me</h2>
+      </div>
 
       <p>
         I am actively building hands-on cybersecurity experience and seeking an
@@ -144,11 +227,13 @@
         <a href="mailto:cjetienne05@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/Clinton-Etienne" target="_blank">LinkedIn</a>
         <a href="https://github.com/cjetienne05" target="_blank">GitHub</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="footer-logo" />
     <p><strong>CE Security Monitoring</strong></p>
     <p>Monitoring • Detection • Incident Response</p>
     <p>© 2026 Clinton Etienne</p>
