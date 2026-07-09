@@ -1,626 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinton Etienne | SOC Analyst Portfolio</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #020617;
-            color: #e5e7eb;
-            line-height: 1.6;
-        }
-
-        header {
-            background: rgba(2, 6, 23, 0.95);
-            padding: 18px 10%;
-            border-bottom: 1px solid #1e293b;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav h2 {
-            color: #38bdf8;
-            margin: 0;
-        }
-
-        nav a {
-            color: #e5e7eb;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-        .hero {
-            padding: 90px 10%;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            align-items: center;
-            background:
-                radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 35%),
-                linear-gradient(135deg, #020617, #0f172a);
-        }
-
-        .badge {
-            color: #22c55e;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 3.7rem;
-            margin: 0;
-            color: #ffffff;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            color: #38bdf8;
-            margin: 10px 0;
-        }
-
-        .hero h3 {
-            color: #cbd5e1;
-            font-weight: normal;
-        }
-
-        .hero p {
-            max-width: 800px;
-            font-size: 1.1rem;
-            color: #cbd5e1;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            margin-right: 10px;
-            padding: 12px 20px;
-            background-color: #38bdf8;
-            color: #020617;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-
-        .button.secondary {
-            background-color: transparent;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
-        }
-
-        .profile-card {
-            background-color: #111827;
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid #1e293b;
-            text-align: center;
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
-        }
-
-        .profile-card img {
-            width: 225px;
-            height: 225px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #38bdf8;
-            margin-bottom: 15px;
-        }
-
-        .profile-card h3 {
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-
-        .profile-card p {
-            color: #cbd5e1;
-            margin: 5px 0;
-        }
-
-        section {
-            padding: 60px 10%;
-        }
-
-        section h2 {
-            color: #ffffff;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            border-left: 4px solid #38bdf8;
-            padding-left: 12px;
-        }
-
-        .focus-grid,
-        .dashboard,
-        .cards {
-            display: grid;
-            gap: 20px;
-        }
-
-        .focus-grid {
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
-
-        .dashboard {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        }
-
-        .cards {
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        }
-
-        .focus-card,
-        .stat,
-        .card,
-        .contact-box {
-            background-color: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .focus-card h3,
-        .card h3 {
-            color: #38bdf8;
-            margin-top: 0;
-        }
-
-        .focus-card p,
-        .card p,
-        .contact-box p {
-            color: #cbd5e1;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat h3 {
-            color: #38bdf8;
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .stat p {
-            margin: 8px 0 0;
-            color: #cbd5e1;
-        }
-
-        .about-layout {
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .about-layout p {
-            color: #cbd5e1;
-            font-size: 1.05rem;
-        }
-
-        .card {
-            transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover,
-        .focus-card:hover {
-            transform: translateY(-5px);
-            border: 1px solid #38bdf8;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: #1e293b;
-            color: #93c5fd;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-top: 10px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill {
-            background-color: #1e293b;
-            padding: 10px 14px;
-            border-radius: 20px;
-            color: #e5e7eb;
-            font-weight: bold;
-        }
-
-        .timeline {
-            border-left: 3px solid #38bdf8;
-            padding-left: 25px;
-            max-width: 950px;
-        }
-
-        .timeline-item {
-            margin-bottom: 25px;
-        }
-
-        .timeline-item h3 {
-            color: #38bdf8;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item p {
-            color: #cbd5e1;
-        }
-
-        a {
-            color: #38bdf8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #020617;
-            border-top: 1px solid #1e293b;
-            color: #94a3b8;
-        }
-
-        .footer-tagline {
-            color: #38bdf8;
-            font-weight: bold;
-        }
-
-        @media (max-width: 850px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 10px;
-            }
-
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinton Etienne | SOC Analyst Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo/ce-security-logo.png" alt="CE Security Logo" class="nav-logo" />
+        <span>Clinton Etienne</span>
+      </a>
 
-<header>
-    <nav>
-        <h2>Clinton Etienne</h2>
-        <div>
-            <a href="#about">About</a>
-            <a href="#focus">Focus</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#journey">Journey</a>
-            <a href="#contact">Contact</a>
-        </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="home-lab.html">Home Lab</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <div>
-        <p class="badge">● Seeking Entry-Level SOC Analyst Opportunities</p>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring Logo" class="hero-logo" />
 
+        <p class="eyebrow">CE Security Monitoring</p>
         <h1>Clinton Etienne</h1>
         <h2>SOC Analyst Portfolio</h2>
-        <h3>Turning nearly 20 years of technical problem-solving into a career in cybersecurity.</h3>
 
-        <p>
-            I am building practical cybersecurity skills through hands-on labs,
-            SIEM investigations, vulnerability assessments, and incident response documentation,
-            and continuous learning.
+        <p class="hero-tagline">
+          Security Monitoring • Threat Detection • Incident Response
         </p>
 
-        <a class="button" href="projects.html">View Projects</a>
-        
-        <a class="button secondary"
-            href="Clinton_Etienne_Resume.pdf"
-            download>
-            Download Resume
-        </a>
-        
-        <a class="button secondary" 
-            href="https://linkedin.com/in/Clinton-Etienne" 
-            target="_blank">
-            LinkedIn
-        </a>
-    </div>
-
-    <div class="profile-card">
-        <img src="./resume_pic.jpg" alt="Professional photo of Clinton Etienne">
-        <h3>Learning. Building. Defending.</h3>
-        <p>Cybersecurity Student</p>
-        <p>Home Lab Builder</p>
-        <p>Future SOC Analyst</p>
-    </div>
-</section>
-
-<section id="focus">
-    <h2>Current Focus</h2>
-
-    <div class="focus-grid">
-        <div class="focus-card">
-            <h3>🛡️ Incident Response</h3>
-            <p>
-                Investigating security events, documenting findings, and practicing
-                containment, remediation, and lessons learned.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <h3>📊 SIEM Monitoring</h3>
-            <p>
-                Using Wazuh to analyze logs, review alerts, and identify suspicious
-                activity in a home lab environment.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <h3>🔍 Vulnerability Management</h3>
-            <p>
-                Identifying security risks with vulnerability scanning tools and
-                developing practical remediation recommendations.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <h3>💻 Home Lab Development</h3>
-            <p>
-                Building hands-on skills with Kali Linux, Ubuntu Server, Metasploitable2,
-                VirtualBox, Nmap, Metasploit, Wireshark, and Wazuh.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>Portfolio Dashboard</h2>
-
-    <div class="dashboard">
-        <div class="stat">
-            <h3>6+</h3>
-            <p>Cybersecurity Project Areas</p>
-        </div>
-
-        <div class="stat">
-            <h3>2+</h3>
-            <p>SOC Incident Reports</p>
-        </div>
-
-        <div class="stat">
-            <h3>1</h3>
-            <p>Home Lab Environment</p>
-        </div>
-
-        <div class="stat">
-            <h3>8</h3>
-            <p>Weeks Until Associate Degree Completion</p>
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <h2>About Me</h2>
-
-    <div class="about-layout">
-        <p>
-            After nearly two decades solving technical problems in fabrication and welding,
-            I decided to transition into cybersecurity. My previous experience taught me how
-            to troubleshoot under pressure, think systematically, and document solutions clearly.
-            Those same skills apply directly to security operations, incident response,
-            and vulnerability management.
+        <p class="hero-summary">
+          Building hands-on cybersecurity experience through home lab development,
+          SIEM investigations, Linux and Windows monitoring, and documented incident response.
         </p>
 
-        <p>
-            I am currently studying cybersecurity through Southern New Hampshire University
-            while building hands-on experience in a home lab environment. My current focus
-            includes SIEM monitoring, Linux security, network scanning, vulnerability analysis,
-            incident documentation, and defensive security practices.
-        </p>
-
-        <p>
-            My goal is to continue developing the practical skills needed for an entry-level
-            SOC Analyst role by combining academic coursework with hands-on labs, technical
-            documentation, and real-world security concepts.
-        </p>
-    </div>
-</section>
-
-<section id="projects">
-    <h2>Portfolio Projects</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Wazuh SIEM Home Lab</h3>
-            <p>
-                Built a home lab using Wazuh, Ubuntu Server, Kali Linux, and VirtualBox
-                to monitor security events from simulated attacks.
-            </p>
-            <span class="tag">SIEM Monitoring</span>
+        <div class="hero-buttons">
+          <a href="projects.html" class="btn primary-btn">View My Work</a>
+          <a href="resume.pdf" class="btn secondary-btn" target="_blank">Download Resume</a>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-            <h3>SSH Authentication Failure Investigation</h3>
-            <p>
-                Investigated failed SSH login attempts, identified source IP activity,
-                reviewed authentication logs, and documented containment and remediation steps.
-            </p>
-            <span class="tag">Incident Response</span>
-        </div>
+    <section class="stats-section">
+      <div class="stat-card">
+        <h3>2</h3>
+        <p>Incident Reports</p>
+      </div>
 
-        <div class="card">
-            <h3>Privilege Escalation Investigation</h3>
-            <p>
-                Reviewed Linux security events involving sudo usage, user creation,
-                password changes, and privilege-related activity.
-            </p>
-            <span class="tag">Linux Security</span>
-        </div>
+      <div class="stat-card">
+        <h3>4+</h3>
+        <p>Home Lab Projects</p>
+      </div>
 
-        <div class="card">
-            <h3>Metasploitable2 Exploitation Lab</h3>
-            <p>
-                Used Kali Linux, Nmap, and Metasploit to identify vulnerable services
-                in a controlled lab environment and document mitigation recommendations.
-            </p>
-            <span class="tag">Offensive Security</span>
-        </div>
+      <div class="stat-card">
+        <h3>6+</h3>
+        <p>MITRE Techniques</p>
+      </div>
 
-        <div class="card">
-            <h3>OpenVAS Vulnerability Assessment</h3>
-            <p>
-                Performed vulnerability scans, reviewed findings, assessed risk,
-                and created remediation recommendations for vulnerable systems.
-            </p>
-            <span class="tag">Vulnerability Management</span>
-        </div>
+      <div class="stat-card">
+        <h3>Wazuh</h3>
+        <p>Primary SIEM Platform</p>
+      </div>
+    </section>
 
-        <div class="card">
-            <h3>Wireshark Traffic Analysis</h3>
-            <p>
-                Analyzed packet captures to identify suspicious network activity,
-                authentication attempts, and traffic patterns.
-            </p>
-            <span class="tag">Network Analysis</span>
-        </div>
-    </div>
-</section>
+    <section class="section about-section">
+      <h2>About This Portfolio</h2>
 
-<section id="skills">
-    <h2>Technical Skills</h2>
+      <p>
+        This portfolio documents my transition into cybersecurity with a focus on
+        SOC analysis, security monitoring, and incident response. My work includes
+        hands-on investigations from a self-built home lab using tools such as Wazuh,
+        Kali Linux, Ubuntu Server, Windows systems, VirtualBox, and MITRE ATT&CK.
+      </p>
 
-    <div class="skills">
-        <span class="skill">Wazuh</span>
-        <span class="skill">Kali Linux</span>
-        <span class="skill">Ubuntu Server</span>
-        <span class="skill">Windows Server</span>
-        <span class="skill">Nmap</span>
-        <span class="skill">Metasploit</span>
-        <span class="skill">Wireshark</span>
-        <span class="skill">OpenVAS</span>
-        <span class="skill">VirtualBox</span>
-        <span class="skill">Linux CLI</span>
-        <span class="skill">Incident Response</span>
-        <span class="skill">Vulnerability Management</span>
-        <span class="skill">Network Security</span>
-        <span class="skill">SIEM Monitoring</span>
-        <span class="skill">Security Documentation</span>
-        <span class="skill">Log Analysis</span>
-    </div>
-</section>
+      <p>
+        Each incident report is written as a professional case file, showing the
+        detection, investigation, indicators of compromise, containment steps,
+        lessons learned, and skills demonstrated during the investigation.
+      </p>
+    </section>
 
-<section id="journey">
-    <h2>Cybersecurity Journey</h2>
+    <section class="section featured-section">
+      <h2>Featured SOC Investigations</h2>
 
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3>Technical Career Foundation</h3>
-            <p>
-                Built a strong troubleshooting background through years of hands-on technical work
-                in fabrication, welding, equipment repair, and problem solving.
-            </p>
-        </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <span class="badge medium">Medium Severity</span>
+          <h3>IR-2026-001</h3>
+          <h4>Linux Privilege Escalation</h4>
+          <p>
+            Investigated suspicious account changes and privilege escalation activity
+            detected by Wazuh on a monitored Linux endpoint.
+          </p>
+          <a href="IR-2026-001_Linux_Privilege_Escalation.html" class="card-link">View Investigation</a>
+        </article>
 
-        <div class="timeline-item">
-            <h3>Cybersecurity Education</h3>
-            <p>
-                Began formal cybersecurity training through Southern New Hampshire University,
-                focusing on security fundamentals, application security, operating systems,
-                networking, and risk management.
-            </p>
-        </div>
+        <article class="project-card">
+          <span class="badge medium">Medium Severity</span>
+          <h3>IR-2026-002</h3>
+          <h4>SSH Brute Force Detection</h4>
+          <p>
+            Investigated repeated failed SSH authentication attempts from a Kali Linux
+            attacker against an Ubuntu Server monitored by Wazuh.
+          </p>
+          <a href="IR-2026-002_SSH_Brute_Force.html" class="card-link">View Investigation</a>
+        </article>
+      </div>
+    </section>
 
-        <div class="timeline-item">
-            <h3>Home Lab Development</h3>
-            <p>
-                Built a cybersecurity lab using Kali Linux, Ubuntu Server, Metasploitable2,
-                Wazuh, VirtualBox, Nmap, Metasploit, Wireshark, and vulnerability scanning tools.
-            </p>
-        </div>
+    <section class="section skills-section">
+      <h2>Core Skills Demonstrated</h2>
 
-        <div class="timeline-item">
-            <h3>Current Focus</h3>
-            <p>
-                Developing practical SOC Analyst skills through SIEM investigations,
-                incident response reports, vulnerability assessments, and hands-on security labs.
-            </p>
-        </div>
-    </div>
-</section>
+      <div class="skills-grid">
+        <span>Wazuh SIEM</span>
+        <span>Linux Log Analysis</span>
+        <span>Incident Response</span>
+        <span>MITRE ATT&CK</span>
+        <span>SSH Monitoring</span>
+        <span>Threat Detection</span>
+        <span>VirtualBox Labs</span>
+        <span>Security Documentation</span>
+      </div>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
+    <section class="section contact-section" id="contact">
+      <h2>Contact</h2>
 
-    <div class="contact-box">
-        <p>
-            I am currently pursuing entry-level cybersecurity opportunities,
-            especially SOC Analyst, security monitoring, and incident response roles.
-        </p>
+      <p>
+        I am actively building hands-on cybersecurity experience and seeking an
+        entry-level SOC Analyst opportunity.
+      </p>
 
-        <p>
-            Email:
-            <a href="mailto:cjetienne05@gmail.com">
-                cjetienne05@gmail.com
-            </a>
-        </p>
+      <div class="contact-links">
+        <a href="mailto:cjetienne05@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/Clinton-Etienne" target="_blank">LinkedIn</a>
+        <a href="https://github.com/cjetienne05" target="_blank">GitHub</a>
+      </div>
+    </section>
+  </main>
 
-        <p>
-            LinkedIn:
-            <a href="https://linkedin.com/in/Clinton-Etienne" target="_blank">
-                linkedin.com/in/Clinton-Etienne
-            </a>
-        </p>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/Clinton-Etienne" target="_blank">
-                github.com/Clinton-Etienne
-            </a>
-        </p>
-
-        <p>
-            Portfolio:
-            <a href="https://clinton-etienne.github.io" target="_blank">
-                clinton-etienne.github.io
-            </a>
-        </p>
-    </div>
-</section>
-
-<footer>
-    <p class="footer-tagline">Learning. Building. Defending.</p>
-    <p>© 2026 Clinton Etienne | Cybersecurity Portfolio</p>
-</footer>
-
+  <footer class="site-footer">
+    <p><strong>CE Security Monitoring</strong></p>
+    <p>Monitoring • Detection • Incident Response</p>
+    <p>© 2026 Clinton Etienne</p>
+  </footer>
 </body>
 </html>
