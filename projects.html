@@ -19,7 +19,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="home-lab.html">Home Lab</a></li>
-        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="Clinton_Etienne_Resume.pdf" target="_blank">Resume</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -30,7 +30,7 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring" class="hero-logo" />
+        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring Logo" class="hero-logo" />
 
         <p class="eyebrow">CE Security Monitoring</p>
         <h1>Projects</h1>
@@ -57,29 +57,30 @@
         </div>
 
         <div class="stat-card">
-          <h3>2</h3>
-          <p>Credential / Access Cases</p>
-        </div>
-
-        <div class="stat-card">
           <h3>Wazuh</h3>
           <p>SIEM Platform</p>
         </div>
 
         <div class="stat-card">
-          <h3>MITRE</h3>
-          <p>Mapped Techniques</p>
+          <h3>2</h3>
+          <p>MITRE Mapped Cases</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Lab</h3>
+          <p>VirtualBox Environment</p>
         </div>
       </div>
     </section>
 
     <section class="section featured-section">
       <div class="section-header">
-        <p class="eyebrow">Incident Reports</p>
-        <h2>SOC Investigation Case Files</h2>
+        <p class="eyebrow">Case Files</p>
+        <h2>Featured SOC Investigations</h2>
       </div>
 
       <div class="project-grid">
+
         <article class="project-card incident-card">
           <div class="card-topline">
             <span class="incident-id">IR-2026-001</span>
@@ -89,9 +90,8 @@
           <h3>Linux Privilege Escalation</h3>
 
           <p>
-            Investigated suspicious Linux account changes, sudo activity, and
-            privilege escalation indicators detected by Wazuh in a monitored
-            Ubuntu endpoint.
+            Investigated suspicious account changes, privilege elevation, and Linux
+            authentication activity detected by Wazuh in a monitored lab environment.
           </p>
 
           <div class="card-meta">
@@ -102,10 +102,13 @@
           </div>
 
           <div class="hero-buttons">
-            <a href="IR-2026-001_Linux_Privilege_Escalation.pdf" class="btn primary-btn">
+            <a href="IR-2026-001.html" class="btn primary-btn">
               View Investigation
             </a>
-            <a href="IR-2026-001_Linux_Privilege_Escalation.pdf" class="btn secondary-btn" target="_blank">
+
+            <a href="assets/IR-2026-001_Linux_Privilege_Escalation.pdf"
+               class="btn secondary-btn"
+               target="_blank">
               Download PDF
             </a>
           </div>
@@ -120,8 +123,8 @@
           <h3>SSH Brute Force Detection</h3>
 
           <p>
-            Investigated repeated failed SSH authentication attempts from a Kali
-            Linux attacker against an Ubuntu Server monitored through Wazuh SIEM.
+            Investigated repeated failed SSH authentication attempts from a Kali Linux
+            attacker against an Ubuntu Server monitored through Wazuh SIEM.
           </p>
 
           <div class="card-meta">
@@ -132,14 +135,18 @@
           </div>
 
           <div class="hero-buttons">
-            <a href="IR-2026-002_SSH_Brute_Force.html" class="btn primary-btn">
+            <a href="IR-2026_002_SSH_Brute_Force.html" class="btn primary-btn">
               View Investigation
             </a>
-            <a href="IR-2026-002_SSH_Brute_Force.pdf" class="btn secondary-btn" target="_blank">
+
+            <a href="IR-2026-002_SSH_Brute_Force.pdf"
+               class="btn secondary-btn"
+               target="_blank">
               Download PDF
             </a>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -160,8 +167,7 @@
 
           <p>
             Built a defensive monitoring environment using Wazuh Manager,
-            Ubuntu endpoints, Kali Linux, and VirtualBox networking to generate,
-            detect, and analyze security events.
+            Ubuntu endpoints, Kali Linux, and VirtualBox networking.
           </p>
 
           <div class="card-meta">
@@ -182,8 +188,7 @@
 
           <p>
             Performed reconnaissance and exploitation against vulnerable services
-            in a controlled lab environment to better understand attacker behavior
-            and detection opportunities.
+            in a controlled lab environment.
           </p>
 
           <div class="card-meta">
@@ -193,28 +198,6 @@
 
           <a href="home-lab.html" class="card-link">View Lab Details →</a>
         </article>
-      </div>
-    </section>
-
-    <section class="section skills-section">
-      <div class="section-header">
-        <p class="eyebrow">Skills Demonstrated</p>
-        <h2>Technical Focus Areas</h2>
-      </div>
-
-      <div class="skills-grid">
-        <span>SIEM Investigation</span>
-        <span>Linux Authentication Logs</span>
-        <span>SSH Monitoring</span>
-        <span>Privilege Escalation</span>
-        <span>Credential Access</span>
-        <span>MITRE ATT&CK</span>
-        <span>Wazuh Alert Analysis</span>
-        <span>IOC Identification</span>
-        <span>Incident Documentation</span>
-        <span>VirtualBox Networking</span>
-        <span>Kali Linux</span>
-        <span>Metasploit</span>
       </div>
     </section>
   </main>
