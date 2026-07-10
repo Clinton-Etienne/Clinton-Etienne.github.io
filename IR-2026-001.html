@@ -1,195 +1,828 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IR-2026-001 | Linux Privilege Escalation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="CE Security incident report documenting Linux privilege escalation activity detected with Wazuh SIEM."
+  />
+
+  <title>IR-2026-001 | Linux Privilege Escalation</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <h1>Clinton Etienne</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.pdf" target="_blank">Resume</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+  <!-- =====================================================
+       SITE HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+    <nav class="navbar">
+
+      <a href="index.html" class="nav-brand">
+        <img
+          src="assets/logo/security-shield.png"
+          alt="CE Security Shield"
+          class="nav-logo"
+        />
+        <span>Clinton Etienne</span>
+      </a>
+
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="projects.html" class="active">Projects</a>
+        </li>
+
+        <li>
+          <a href="home-lab.html">Home Lab</a>
+        </li>
+
+        <li>
+          <a
+            href="Clinton_Etienne_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html#contact">Contact</a>
+        </li>
+      </ul>
+
     </nav>
-</header>
+  </header>
 
-<main>
 
-<section class="page-header">
-    <p class="case-label medium">MEDIUM SEVERITY</p>
+  <main>
 
-    <h2>IR-2026-001</h2>
+    <!-- =====================================================
+         REPORT HERO
+         ===================================================== -->
 
-    <h3>Linux Privilege Escalation Investigation</h3>
+    <section class="hero v4-hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <img
+          src="assets/logo/ce-security-logo.png"
+          alt="CE Security Monitoring"
+          class="hero-logo"
+        />
+
+        <p class="eyebrow">Incident Report</p>
+
+        <h1>IR-2026-001</h1>
+
+        <h2>Linux Privilege Escalation</h2>
+
+        <p class="hero-tagline">
+          Security Monitoring • Threat Detection • Incident Response
+        </p>
+
+        <p class="hero-summary">
+          Investigation of Linux account changes, elevated sudo activity,
+          root access, and password modification events detected by Wazuh
+          on a monitored Ubuntu endpoint.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="assets/IR-2026-001_Linux_Privilege_Escalation.pdf"
+            class="btn primary-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download PDF
+          </a>
+
+          <a href="projects.html" class="btn secondary-btn">
+            Back to Projects
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         INCIDENT OVERVIEW
+         ===================================================== -->
+
+    <section class="soc-overview section">
+
+      <div class="section-header">
+        <p class="eyebrow">Case Summary</p>
+        <h2>Incident Overview</h2>
+      </div>
+
+      <div class="stats-section">
+
+        <div class="stat-card">
+          <h3>Medium</h3>
+          <p>Severity</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Closed</h3>
+          <p>Status</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Wazuh</h3>
+          <p>Detection Platform</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Linux</h3>
+          <p>Target Platform</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         EXECUTIVE SUMMARY
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Summary</p>
+        <h2>Executive Summary</h2>
+      </div>
+
+      <article class="project-card">
+
+        <p>
+          Wazuh detected a sequence of security-relevant events on the
+          monitored Ubuntu endpoint, including privileged command execution,
+          creation of a new user account, elevation to the root account, and
+          modification of account credentials.
+        </p>
+
+        <p>
+          The events were correlated into a single privilege escalation
+          investigation. The activity demonstrated how an authenticated user
+          could obtain elevated access and make administrative changes that
+          would require immediate validation in a production environment.
+        </p>
+
+        <p>
+          The activity occurred during an authorized home-lab exercise. No
+          evidence of unauthorized persistence, lateral movement, malware
+          execution, or data exfiltration was identified.
+        </p>
+
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         INCIDENT DETAILS
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Case Information</p>
+        <h2>Incident Details</h2>
+      </div>
+
+      <article class="project-card">
+
+        <div class="card-meta">
+          <span>
+            <strong>Incident ID:</strong>
+            IR-2026-001
+          </span>
+
+          <span>
+            <strong>Incident Title:</strong>
+            Linux Privilege Escalation
+          </span>
+
+          <span>
+            <strong>Severity:</strong>
+            Medium
+          </span>
+
+          <span>
+            <strong>Status:</strong>
+            Closed
+          </span>
+
+          <span>
+            <strong>Detection Platform:</strong>
+            Wazuh SIEM
+          </span>
+
+          <span>
+            <strong>Monitored Endpoint:</strong>
+            LINUX01
+          </span>
+
+          <span>
+            <strong>Operating System:</strong>
+            Ubuntu Linux
+          </span>
+
+          <span>
+            <strong>Environment:</strong>
+            VirtualBox Home Lab
+          </span>
+
+          <span>
+            <strong>Analyst:</strong>
+            Clinton Etienne
+          </span>
+        </div>
+
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         INVESTIGATION TIMELINE
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Timeline</p>
+        <h2>Investigation Timeline</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <span class="incident-id">Event 01</span>
+          <h3>Initial Sudo Activity</h3>
+
+          <p>
+            Wazuh recorded the first use of sudo on the monitored Linux
+            endpoint, establishing the beginning of the elevated activity.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Event 02</span>
+          <h3>New User Created</h3>
+
+          <p>
+            A new local account was created. In a production environment,
+            this event would require validation against an approved change
+            request or administrative task.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Event 03</span>
+          <h3>Privilege Elevated to Root</h3>
+
+          <p>
+            The authenticated user elevated privileges and obtained a root
+            shell, providing unrestricted administrative access to the Linux
+            operating system.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Event 04</span>
+          <h3>Password Modified</h3>
+
+          <p>
+            A password change occurred after root access was obtained,
+            increasing the importance of reviewing the account affected and
+            determining whether the action was authorized.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Event 05</span>
+          <h3>Alert Correlation</h3>
+
+          <p>
+            Related Wazuh alerts were reviewed together to reconstruct the
+            sequence from initial privileged execution through account and
+            credential modification.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Event 06</span>
+          <h3>Incident Closed</h3>
+
+          <p>
+            The activity was confirmed as an authorized lab exercise. No
+            additional signs of persistence, lateral movement, or compromise
+            were identified.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         EVIDENCE SUMMARY
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Evidence</p>
+        <h2>Evidence Summary</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <h3>Wazuh Alerts</h3>
+
+          <p>
+            Wazuh alerts supplied the event sequence used to identify
+            privileged command execution, account changes, and credential
+            modification.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <h3>Linux Authentication Logs</h3>
+
+          <p>
+            Authentication and sudo-related log entries provided supporting
+            context regarding the user session and elevated activity.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <h3>Account Modification Events</h3>
+
+          <p>
+            User creation and password modification activity showed that
+            administrative changes occurred after privileges were elevated.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <h3>Event Correlation</h3>
+
+          <p>
+            Individual alerts were combined into a single timeline to show
+            the relationship between authentication, sudo execution, root
+            access, and account modification.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         INDICATORS OF ACTIVITY
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Indicators</p>
+        <h2>Indicators of Suspicious Activity</h2>
+      </div>
+
+      <article class="project-card">
+
+        <div class="card-meta">
+
+          <span>
+            <strong>Endpoint:</strong>
+            LINUX01
+          </span>
+
+          <span>
+            <strong>Operating System:</strong>
+            Ubuntu Linux
+          </span>
+
+          <span>
+            <strong>Activity Type:</strong>
+            Privilege escalation
+          </span>
+
+          <span>
+            <strong>Command Activity:</strong>
+            sudo execution
+          </span>
+
+          <span>
+            <strong>Account Activity:</strong>
+            New local user created
+          </span>
+
+          <span>
+            <strong>Privilege Level:</strong>
+            Root access obtained
+          </span>
+
+          <span>
+            <strong>Credential Activity:</strong>
+            Password modified
+          </span>
+
+          <span>
+            <strong>Detection Source:</strong>
+            Wazuh SIEM and Linux system logs
+          </span>
+
+        </div>
+
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         MITRE ATT&CK
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">MITRE ATT&amp;CK</p>
+        <h2>Technique Mapping</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <span class="incident-id">Privilege Escalation</span>
+          <h3>Valid Accounts</h3>
+
+          <p>
+            The activity used an authenticated Linux account before
+            transitioning into elevated access.
+          </p>
+
+          <div class="card-meta">
+            <span>
+              <strong>Technique:</strong>
+              T1078 — Valid Accounts
+            </span>
+          </div>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Privilege Escalation</span>
+          <h3>Sudo and Sudo Caching</h3>
+
+          <p>
+            Sudo was used to execute commands with elevated privileges and
+            obtain root-level access.
+          </p>
+
+          <div class="card-meta">
+            <span>
+              <strong>Technique:</strong>
+              T1548.003 — Sudo and Sudo Caching
+            </span>
+          </div>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Persistence</span>
+          <h3>Create Account</h3>
+
+          <p>
+            Creation of an additional local account could provide continued
+            access if the action were unauthorized.
+          </p>
+
+          <div class="card-meta">
+            <span>
+              <strong>Technique:</strong>
+              T1136.001 — Local Account
+            </span>
+          </div>
+        </article>
+
+
+        <article class="project-card">
+          <span class="incident-id">Account Access</span>
+          <h3>Account Manipulation</h3>
+
+          <p>
+            Password modification represented a material change to account
+            access and required validation during the investigation.
+          </p>
+
+          <div class="card-meta">
+            <span>
+              <strong>Technique:</strong>
+              T1098 — Account Manipulation
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         ANALYST INVESTIGATION
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Analysis</p>
+        <h2>Analyst Investigation</h2>
+      </div>
+
+      <article class="project-card">
+
+        <p>
+          The investigation began with a review of the Wazuh alerts associated
+          with the Ubuntu endpoint. The alerts showed a clear progression from
+          normal authenticated activity into privileged administrative
+          actions.
+        </p>
+
+        <p>
+          Initial sudo execution established that elevated privileges were
+          being requested. The subsequent creation of a new local account,
+          transition to a root shell, and modification of a password increased
+          the security relevance of the activity.
+        </p>
+
+        <p>
+          In a production environment, this sequence could indicate
+          unauthorized privilege escalation, persistence preparation, or
+          manipulation of account access. The analyst would need to verify the
+          initiating user, review command history, confirm whether the new
+          account was approved, and determine which account password was
+          modified.
+        </p>
+
+        <p>
+          Review of the available lab evidence found no additional indicators
+          of malicious persistence, remote access, lateral movement, malware
+          execution, or data exfiltration. The events were confirmed as part of
+          an authorized exercise designed to validate Wazuh monitoring and
+          incident reconstruction.
+        </p>
+
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         RESPONSE ACTIONS
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Response</p>
+        <h2>Containment, Recovery, and Recommendations</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <h3>Containment</h3>
+
+          <p>
+            If the activity were unauthorized, the affected endpoint should
+            be isolated from the network while the user session, sudo
+            activity, and account modifications are investigated.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <h3>Account Validation</h3>
+
+          <p>
+            Confirm whether the newly created user was approved. Disable or
+            remove unauthorized accounts and review group memberships,
+            sudoers permissions, and SSH access.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <h3>Credential Recovery</h3>
+
+          <p>
+            Reset affected credentials, revoke active sessions, and review
+            authentication logs for additional access attempts or unexpected
+            account use.
+          </p>
+        </article>
+
+
+        <article class="project-card">
+          <h3>Monitoring Improvements</h3>
+
+          <p>
+            Maintain alerts for account creation, sudo activity, root shell
+            access, password changes, and modifications to privileged groups
+            or the sudoers configuration.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         LESSONS LEARNED
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Post-Incident Review</p>
+        <h2>Lessons Learned</h2>
+      </div>
+
+      <article class="project-card">
+
+        <p>
+          Individual administrative events may appear legitimate when viewed
+          separately. Correlating sudo execution, account creation, root
+          access, and password modification provides stronger context and
+          supports more accurate incident classification.
+        </p>
+
+        <p>
+          Linux privilege escalation investigations should include validation
+          of the initiating user, command history, account changes, active
+          sessions, privileged group membership, authentication activity, and
+          possible persistence mechanisms.
+        </p>
+
+        <p>
+          The exercise also demonstrated the value of centralized monitoring.
+          Wazuh allowed multiple Linux events to be reviewed together rather
+          than treating each alert as an isolated occurrence.
+        </p>
+
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS DEMONSTRATED
+         ===================================================== -->
+
+    <section class="section skills-section">
+
+      <div class="section-header">
+        <p class="eyebrow">Professional Development</p>
+        <h2>Skills Demonstrated</h2>
+      </div>
+
+      <div class="skills-grid">
+        <span>Wazuh SIEM Analysis</span>
+        <span>Linux Log Analysis</span>
+        <span>Sudo Activity Review</span>
+        <span>Privilege Escalation Analysis</span>
+        <span>User Account Monitoring</span>
+        <span>MITRE ATT&amp;CK Mapping</span>
+        <span>Alert Correlation</span>
+        <span>Incident Timeline Reconstruction</span>
+        <span>Threat Investigation</span>
+        <span>Incident Documentation</span>
+        <span>Containment Planning</span>
+        <span>Security Recommendations</span>
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ANALYST CONCLUSION
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Conclusion</p>
+        <h2>Analyst Conclusion</h2>
+      </div>
+
+      <article class="project-card">
+
+        <p>
+          The investigation successfully reconstructed a Linux privilege
+          escalation sequence using Wazuh alerts and supporting Linux system
+          activity. The sequence included sudo execution, account creation,
+          elevation to root, and password modification.
+        </p>
+
+        <p>
+          Although the actions were authorized as part of a controlled home-lab
+          exercise, the same event pattern in a production environment would
+          warrant immediate investigation and validation.
+        </p>
+
+        <p>
+          This case demonstrates practical experience with Linux security
+          monitoring, SIEM alert correlation, MITRE ATT&amp;CK mapping,
+          incident analysis, and professional cybersecurity documentation.
+        </p>
+
+      </article>
+    </section>
+
+
+    <!-- =====================================================
+         REPORT NAVIGATION
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="section-header">
+        <p class="eyebrow">Case Navigation</p>
+        <h2>Continue Reviewing Investigations</h2>
+      </div>
+
+      <div class="hero-buttons">
+
+        <a href="projects.html" class="btn secondary-btn">
+          Back to Projects
+        </a>
+
+        <a
+          href="IR-2026_002_SSH_Brute_Force.html"
+          class="btn primary-btn"
+        >
+          Next Investigation
+        </a>
+
+        <a
+          href="assets/IR-2026-001_Linux_Privilege_Escalation.pdf"
+          class="btn ghost-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download Full Report
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <img
+      src="assets/logo/security-shield.png"
+      alt="CE Security Shield"
+      class="footer-logo"
+    />
 
     <p>
-        Investigation of Linux administrative account creation, group creation,
-        password assignment, sudo activity, and privilege escalation alerts
-        generated by Wazuh SIEM.
-    </p>
-</section>
-
-<section class="case-card">
-    <h3>Incident Overview</h3>
-
-    <p><strong>Status:</strong> Closed</p>
-    <p><strong>Severity:</strong> Medium — Wazuh Rule Level 8</p>
-    <p><strong>Date Detected:</strong> June 20, 2026 at 14:46:01</p>
-    <p><strong>Analyst:</strong> Clinton Etienne</p>
-    <p><strong>Affected Host:</strong> Ubuntu-Target — 192.168.56.107</p>
-    <p><strong>Alert Source:</strong> Wazuh SIEM</p>
-    <p><strong>Rule ID:</strong> 5901</p>
-</section>
-
-<section class="case-card">
-    <h3>Executive Summary</h3>
-
-    <p>
-        Wazuh generated Rule ID 5901 after detecting the creation of a new
-        local group on the monitored Ubuntu-Target endpoint. The activity
-        originated from the adduser process and was recorded through the
-        system journal.
+      <strong>CE Security Monitoring</strong>
     </p>
 
     <p>
-        After reviewing the related alerts, the investigation determined that
-        the activity was performed by an authorized administrator. No evidence
-        of unauthorized access or malicious activity was identified.
-    </p>
-</section>
-
-<section class="case-card">
-    <h3>Alert Details</h3>
-
-    <p><strong>Rule Name:</strong> New group added to system</p>
-    <p><strong>Alert Description:</strong> New user group, user, and password created</p>
-    <p><strong>Source IP:</strong> 192.168.56.107</p>
-    <p><strong>Destination IP:</strong> 192.168.56.107</p>
-    <p><strong>Username / Account:</strong> Clinton</p>
-</section>
-
-<section class="case-card">
-    <h3>MITRE ATT&CK Mapping</h3>
-
-    <ul>
-        <li>TA0004 — Privilege Escalation</li>
-        <li>TA0003 — Persistence</li>
-        <li>TA0005 — Defense Evasion</li>
-        <li>TA0001 — Initial Access</li>
-    </ul>
-</section>
-
-<section class="case-card">
-    <h3>Timeline of Events</h3>
-
-    <ol>
-        <li>User authenticated to Ubuntu-Target.</li>
-        <li>First-time sudo usage was detected.</li>
-        <li>Successful privilege escalation to root was observed.</li>
-        <li>A new user account was created.</li>
-        <li>A new local group was automatically created for the account.</li>
-        <li>A password was assigned to the account.</li>
-        <li>Wazuh generated Rule 5901 alert.</li>
-    </ol>
-</section>
-
-<section class="case-card">
-    <h3>Investigation Findings</h3>
-
-    <p>
-        A review of related Wazuh alerts confirmed that the activity occurred
-        during authorized administrative work. The account and group creation
-        events were consistent with normal Linux administration.
+      Monitoring • Detection • Incident Response
     </p>
 
     <p>
-        No malicious behavior, persistence mechanism, unauthorized access attempt,
-        or abnormal source activity was identified during the investigation.
-    </p>
-</section>
-
-<section class="case-card">
-    <h3>Evidence</h3>
-
-    <p>
-        Wazuh alert evidence confirmed local account activity, group creation,
-        password assignment, sudo usage, and privilege escalation-related events.
+      © 2026 Clinton Etienne
     </p>
 
-    <p><em>Wazuh screenshot evidence is included in the downloadable incident report.</em></p>
-</section>
-
-<section class="case-card">
-    <h3>Impact Assessment</h3>
-
-    <p>
-        No adverse impact was identified. The activity was performed by an
-        authorized administrator account and did not indicate compromise.
-    </p>
-</section>
-
-<section class="case-card">
-    <h3>Containment and Remediation</h3>
-
-    <p>
-        No containment actions were required because the activity was determined
-        to be authorized administrative activity.
-    </p>
-
-    <p>
-        Recommended follow-up includes continued monitoring of sudo activity,
-        account creation events, password changes, and administrative actions
-        through Wazuh SIEM.
-    </p>
-</section>
-
-<section class="case-card">
-    <h3>Lessons Learned</h3>
-
-    <p>
-        Not every security alert represents malicious activity. This investigation
-        demonstrates the importance of validating administrative behavior before
-        escalating an incident.
-    </p>
-
-    <p>
-        Proper log correlation and analyst review helped confirm that the activity
-        was authorized while also proving that the monitoring controls were working
-        as expected.
-    </p>
-</section>
-
-<section class="case-card">
-    <h3>Final Disposition</h3>
-
-    <p><strong>Disposition:</strong> Authorized Activity / False Positive</p>
-    <p><strong>Closed Date:</strong> June 20, 2026 at 3:45 PM</p>
-    <p><strong>Analyst:</strong> Clinton Etienne</p>
-</section>
-
-<section>
-    <a href="projects.html" class="button secondary">Back to Projects</a>
-
-    <a href="assets/reports/IR-2026-001_Linux_Privilege_Escalation_CE_Security.pdf"
-       class="button"
-       target="_blank">
-       Download Original Incident Report (PDF)
-    </a>
-</section>
-
-</main>
-
-<footer>
-    <p>&copy; 2026 Clinton Etienne | Cybersecurity Portfolio</p>
-</footer>
+  </footer>
 
 </body>
 </html>
