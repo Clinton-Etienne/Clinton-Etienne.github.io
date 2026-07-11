@@ -1,323 +1,894 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Lab | Clinton Etienne SOC Analyst Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore Clinton Etienne's CE Security cybersecurity home lab, including Wazuh SIEM monitoring, Kali Linux attack simulation, Ubuntu security analysis, and incident response projects."
+    >
+
+    <title>Home Lab | CE Security</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="nav-logo" />
-        <span>Clinton Etienne</span>
-      </a>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="home-lab.html" class="active">Home Lab</a></li>
-        <li><a href="resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ==================================================
+         HEADER / NAVIGATION
+    =================================================== -->
+    <header class="site-header">
+        <div class="nav-container">
 
-  <main>
-    <section class="hero v4-hero">
-      <div class="hero-overlay"></div>
+            <a href="index.html" class="brand-link" aria-label="CE Security home">
+                <img
+                    src="assets/logos/ce-security-logo.png"
+                    alt="CE Security logo"
+                    class="site-logo"
+                >
+            </a>
 
-      <div class="hero-content">
-        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring" class="hero-logo" />
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="home-lab.html" class="active" aria-current="page">
+                    Home Lab
+                </a>
+            </nav>
 
-        <p class="eyebrow">CE Security Monitoring</p>
-        <h1>Home Lab</h1>
-        <h2>Enterprise-Style SOC Environment</h2>
-
-        <p class="hero-summary">
-          A self-built cybersecurity lab used to generate realistic security events,
-          monitor endpoints, analyze alerts, document investigations, and practice
-          SOC analyst workflows.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn primary-btn">View Case Files</a>
-          <a href="IR-2026-002_SSH_Brute_Force.pdf" class="btn secondary-btn" target="_blank">Download Sample IR</a>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section class="soc-overview section">
-      <div class="section-header">
-        <p class="eyebrow">Lab Overview</p>
-        <h2>Security Operations Lab Summary</h2>
-      </div>
 
-      <div class="stats-section">
-        <div class="stat-card">
-          <h3>Wazuh</h3>
-          <p>SIEM Platform</p>
+    <main>
+
+        <!-- ==================================================
+             HERO SECTION
+        =================================================== -->
+        <section class="page-hero home-lab-hero">
+            <div class="container">
+
+                <p class="eyebrow">CE Security Operations</p>
+
+                <h1>Cybersecurity Home Lab</h1>
+
+                <p class="hero-subtitle">
+                    Building practical SOC analyst skills through attack
+                    simulation, centralized monitoring, alert investigation,
+                    incident response, and technical documentation.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#architecture" class="button button-primary">
+                        View Lab Architecture
+                    </a>
+
+                    <a href="projects.html" class="button button-secondary">
+                        View Investigations
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             LAB STATUS BAR
+        =================================================== -->
+        <section class="lab-status-section">
+            <div class="container">
+
+                <div class="lab-status-grid">
+
+                    <article class="status-item">
+                        <span class="status-indicator status-online"></span>
+                        <div>
+                            <span class="status-label">Lab Status</span>
+                            <strong>Operational</strong>
+                        </div>
+                    </article>
+
+                    <article class="status-item">
+                        <span class="status-number">4</span>
+                        <div>
+                            <span class="status-label">Core Systems</span>
+                            <strong>Deployed</strong>
+                        </div>
+                    </article>
+
+                    <article class="status-item">
+                        <span class="status-number">2</span>
+                        <div>
+                            <span class="status-label">Wazuh Agents</span>
+                            <strong>Active</strong>
+                        </div>
+                    </article>
+
+                    <article class="status-item">
+                        <span class="status-number">2</span>
+                        <div>
+                            <span class="status-label">Investigations</span>
+                            <strong>Documented</strong>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             OVERVIEW
+        =================================================== -->
+        <section class="content-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Lab Overview</p>
+                    <h2>Hands-On Security Operations Environment</h2>
+                </div>
+
+                <div class="overview-grid">
+
+                    <div class="overview-copy">
+                        <p>
+                            I built this cybersecurity home lab to gain practical
+                            experience beyond classroom instruction. The environment
+                            allows me to simulate attacks, monitor endpoint activity,
+                            investigate security alerts, and document incidents using
+                            workflows similar to those used in a Security Operations
+                            Center.
+                        </p>
+
+                        <p>
+                            The current environment is hosted in Oracle VirtualBox
+                            on a Windows 11 workstation. Wazuh provides centralized
+                            security monitoring, Kali Linux is used to generate
+                            controlled attack activity, and Ubuntu and
+                            Metasploitable2 serve as monitored or vulnerable targets.
+                        </p>
+
+                        <p>
+                            Each project is designed to strengthen my ability to
+                            identify suspicious behavior, review supporting evidence,
+                            assess risk, map activity to MITRE ATT&amp;CK, and produce
+                            professional incident documentation.
+                        </p>
+                    </div>
+
+                    <aside class="analyst-card">
+                        <p class="card-kicker">Lab Owner</p>
+                        <h3>Clinton Etienne</h3>
+                        <p class="analyst-role">
+                            Cybersecurity Student &amp; Aspiring SOC Analyst
+                        </p>
+
+                        <div class="analyst-details">
+                            <div>
+                                <span>Primary SIEM</span>
+                                <strong>Wazuh</strong>
+                            </div>
+
+                            <div>
+                                <span>Hypervisor</span>
+                                <strong>VirtualBox</strong>
+                            </div>
+
+                            <div>
+                                <span>Primary Focus</span>
+                                <strong>Threat Detection</strong>
+                            </div>
+
+                            <div>
+                                <span>Environment</span>
+                                <strong>Controlled Lab</strong>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             ARCHITECTURE DIAGRAM
+        =================================================== -->
+        <section id="architecture" class="content-section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Network Architecture</p>
+                    <h2>Secure, Segmented, and Monitored Design</h2>
+
+                    <p class="section-description">
+                        This diagram illustrates the target architecture for the
+                        lab as it expands from a single VirtualBox host-only network
+                        into a segmented security environment.
+                    </p>
+                </div>
+
+                <figure class="network-diagram-card">
+
+                    <a
+                        href="assets/images/home-lab-network-diagram.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="diagram-link"
+                        aria-label="Open the full-size CE Security home lab network diagram"
+                    >
+                        <img
+                            src="assets/images/home-lab-network-diagram.png"
+                            alt="CE Security segmented home lab network architecture showing a firewall, managed switch, management network, DMZ, lab network, IoT network, guest network, Wazuh server, Kali Linux, Windows Server, and Ubuntu Server"
+                            class="network-diagram"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <figcaption>
+                        Target CE Security network architecture. Select the
+                        diagram to open the full-size image.
+                    </figcaption>
+
+                </figure>
+
+                <div class="architecture-note">
+                    <div class="note-icon" aria-hidden="true">i</div>
+
+                    <div>
+                        <h3>Current Environment vs. Expansion Design</h3>
+
+                        <p>
+                            The active lab currently operates on the
+                            <strong>192.168.56.0/24 VirtualBox host-only network</strong>.
+                            The VLANs, pfSense firewall, managed switch, DMZ, IoT
+                            segment, and guest network shown above represent the
+                            planned expansion architecture.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             CURRENT LAB TOPOLOGY
+        =================================================== -->
+        <section class="content-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Active Environment</p>
+                    <h2>Current VirtualBox Topology</h2>
+
+                    <p class="section-description">
+                        These are the systems currently deployed and used for
+                        security monitoring, attack simulation, and investigation.
+                    </p>
+                </div>
+
+                <div class="topology-flow" aria-label="Current lab traffic flow">
+
+                    <div class="topology-node">
+                        <span class="node-type">Host System</span>
+                        <strong>Windows 11</strong>
+                        <small>VirtualBox Hypervisor</small>
+                    </div>
+
+                    <span class="topology-arrow" aria-hidden="true">→</span>
+
+                    <div class="topology-node">
+                        <span class="node-type">Virtual Network</span>
+                        <strong>192.168.56.0/24</strong>
+                        <small>Host-Only Network</small>
+                    </div>
+
+                    <span class="topology-arrow" aria-hidden="true">→</span>
+
+                    <div class="topology-node">
+                        <span class="node-type">Security Systems</span>
+                        <strong>Wazuh + Endpoints</strong>
+                        <small>Detection and Analysis</small>
+                    </div>
+
+                </div>
+
+                <div class="asset-grid">
+
+                    <!-- WAZUH -->
+                    <article class="asset-card">
+                        <div class="asset-card-header">
+                            <span class="asset-icon">WS</span>
+                            <span class="asset-status online">Online</span>
+                        </div>
+
+                        <h3>Wazuh Manager</h3>
+                        <p class="asset-role">SIEM and Security Monitoring</p>
+
+                        <dl class="asset-details">
+                            <div>
+                                <dt>Hostname</dt>
+                                <dd>WAZUH</dd>
+                            </div>
+
+                            <div>
+                                <dt>IP Address</dt>
+                                <dd>192.168.56.103</dd>
+                            </div>
+
+                            <div>
+                                <dt>Platform</dt>
+                                <dd>Ubuntu Server</dd>
+                            </div>
+
+                            <div>
+                                <dt>Monitoring</dt>
+                                <dd>Manager System</dd>
+                            </div>
+                        </dl>
+
+                        <p>
+                            Collects endpoint telemetry, generates security alerts,
+                            and supports investigation of authentication,
+                            privilege-escalation, and system activity.
+                        </p>
+                    </article>
+
+
+                    <!-- KALI -->
+                    <article class="asset-card">
+                        <div class="asset-card-header">
+                            <span class="asset-icon">KL</span>
+                            <span class="asset-status online">Online</span>
+                        </div>
+
+                        <h3>Kali Linux</h3>
+                        <p class="asset-role">Attack Simulation Workstation</p>
+
+                        <dl class="asset-details">
+                            <div>
+                                <dt>Hostname</dt>
+                                <dd>KALI01</dd>
+                            </div>
+
+                            <div>
+                                <dt>Network</dt>
+                                <dd>192.168.56.0/24</dd>
+                            </div>
+
+                            <div>
+                                <dt>Platform</dt>
+                                <dd>Kali Linux</dd>
+                            </div>
+
+                            <div>
+                                <dt>Monitoring</dt>
+                                <dd>Wazuh Agent</dd>
+                            </div>
+                        </dl>
+
+                        <p>
+                            Generates controlled offensive-security activity,
+                            including scanning, SSH authentication attempts, and
+                            Metasploit-based testing.
+                        </p>
+                    </article>
+
+
+                    <!-- UBUNTU -->
+                    <article class="asset-card">
+                        <div class="asset-card-header">
+                            <span class="asset-icon">LU</span>
+                            <span class="asset-status online">Online</span>
+                        </div>
+
+                        <h3>Ubuntu Endpoint</h3>
+                        <p class="asset-role">Monitored Linux Target</p>
+
+                        <dl class="asset-details">
+                            <div>
+                                <dt>Hostname</dt>
+                                <dd>LINUX01</dd>
+                            </div>
+
+                            <div>
+                                <dt>Network</dt>
+                                <dd>192.168.56.0/24</dd>
+                            </div>
+
+                            <div>
+                                <dt>Platform</dt>
+                                <dd>Ubuntu Linux</dd>
+                            </div>
+
+                            <div>
+                                <dt>Monitoring</dt>
+                                <dd>Wazuh Agent</dd>
+                            </div>
+                        </dl>
+
+                        <p>
+                            Provides Linux authentication, account-management,
+                            sudo, privilege-escalation, and SSH telemetry for
+                            security investigations.
+                        </p>
+                    </article>
+
+
+                    <!-- METASPLOITABLE -->
+                    <article class="asset-card">
+                        <div class="asset-card-header">
+                            <span class="asset-icon">M2</span>
+                            <span class="asset-status isolated">Isolated</span>
+                        </div>
+
+                        <h3>Metasploitable2</h3>
+                        <p class="asset-role">Intentionally Vulnerable Target</p>
+
+                        <dl class="asset-details">
+                            <div>
+                                <dt>Hostname</dt>
+                                <dd>METASPLOITABLE2</dd>
+                            </div>
+
+                            <div>
+                                <dt>Network</dt>
+                                <dd>192.168.56.0/24</dd>
+                            </div>
+
+                            <div>
+                                <dt>Platform</dt>
+                                <dd>Linux</dd>
+                            </div>
+
+                            <div>
+                                <dt>Monitoring</dt>
+                                <dd>No Agent</dd>
+                            </div>
+                        </dl>
+
+                        <p>
+                            Used as a controlled vulnerable system for exploitation,
+                            service enumeration, attack-path testing, and offensive
+                            security practice.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             SOC WORKFLOW
+        =================================================== -->
+        <section class="content-section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Security Operations</p>
+                    <h2>Investigation Workflow</h2>
+
+                    <p class="section-description">
+                        Lab exercises follow a repeatable SOC-style process from
+                        attack simulation through final documentation.
+                    </p>
+                </div>
+
+                <div class="workflow-grid">
+
+                    <article class="workflow-step">
+                        <span class="step-number">01</span>
+                        <h3>Simulate</h3>
+                        <p>
+                            Generate controlled attack behavior using Kali Linux,
+                            command-line tools, or Metasploit.
+                        </p>
+                    </article>
+
+                    <article class="workflow-step">
+                        <span class="step-number">02</span>
+                        <h3>Detect</h3>
+                        <p>
+                            Review alerts and endpoint telemetry generated by Wazuh
+                            and the monitored operating system.
+                        </p>
+                    </article>
+
+                    <article class="workflow-step">
+                        <span class="step-number">03</span>
+                        <h3>Investigate</h3>
+                        <p>
+                            Correlate users, hosts, timestamps, commands, network
+                            activity, and related security events.
+                        </p>
+                    </article>
+
+                    <article class="workflow-step">
+                        <span class="step-number">04</span>
+                        <h3>Assess</h3>
+                        <p>
+                            Determine scope, severity, likely impact, and whether
+                            the activity requires containment or escalation.
+                        </p>
+                    </article>
+
+                    <article class="workflow-step">
+                        <span class="step-number">05</span>
+                        <h3>Map</h3>
+                        <p>
+                            Associate observed behavior with applicable MITRE
+                            ATT&amp;CK tactics and techniques.
+                        </p>
+                    </article>
+
+                    <article class="workflow-step">
+                        <span class="step-number">06</span>
+                        <h3>Document</h3>
+                        <p>
+                            Produce a professional incident report containing
+                            evidence, findings, remediation, and lessons learned.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             TOOLS AND TECHNOLOGIES
+        =================================================== -->
+        <section class="content-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Technology Stack</p>
+                    <h2>Tools and Platforms</h2>
+                </div>
+
+                <div class="technology-grid">
+
+                    <article class="technology-card">
+                        <h3>Wazuh SIEM</h3>
+                        <p>
+                            Centralized alerting, endpoint monitoring, log analysis,
+                            and security-event investigation.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>Kali Linux</h3>
+                        <p>
+                            Network reconnaissance, controlled attack simulation,
+                            vulnerability testing, and validation.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>Ubuntu Linux</h3>
+                        <p>
+                            Linux administration, authentication analysis, account
+                            activity, and privilege monitoring.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>Metasploit</h3>
+                        <p>
+                            Controlled exploitation and testing of vulnerable
+                            services within an isolated environment.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>VirtualBox</h3>
+                        <p>
+                            Virtual-machine deployment, network isolation,
+                            snapshots, and lab-environment management.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>Cisco Packet Tracer</h3>
+                        <p>
+                            Network design, topology planning, device placement,
+                            and future segmentation modeling.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>MITRE ATT&amp;CK</h3>
+                        <p>
+                            Classification of attacker behavior using recognized
+                            tactics, techniques, and procedures.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>GitHub Pages</h3>
+                        <p>
+                            Publication of incident reports, technical projects,
+                            lab documentation, and portfolio content.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             SKILLS
+        =================================================== -->
+        <section class="content-section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Demonstrated Capabilities</p>
+                    <h2>Skills Developed Through the Lab</h2>
+                </div>
+
+                <div class="skills-list">
+                    <span>SIEM Monitoring</span>
+                    <span>Alert Triage</span>
+                    <span>Log Analysis</span>
+                    <span>Incident Response</span>
+                    <span>Linux Security</span>
+                    <span>Network Analysis</span>
+                    <span>Threat Detection</span>
+                    <span>MITRE ATT&amp;CK Mapping</span>
+                    <span>Vulnerability Assessment</span>
+                    <span>Attack Simulation</span>
+                    <span>Risk Assessment</span>
+                    <span>Technical Documentation</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             INVESTIGATIONS
+        =================================================== -->
+        <section class="content-section">
+            <div class="container">
+
+                <div class="section-heading section-heading-split">
+                    <div>
+                        <p class="eyebrow">Portfolio Investigations</p>
+                        <h2>Security Cases Built From the Lab</h2>
+                    </div>
+
+                    <a href="projects.html" class="text-link">
+                        View All Projects →
+                    </a>
+                </div>
+
+                <div class="investigation-grid">
+
+                    <article class="investigation-card">
+
+                        <div class="investigation-meta">
+                            <span class="case-number">IR-2026-001</span>
+                            <span class="severity-badge severity-medium">
+                                Medium
+                            </span>
+                        </div>
+
+                        <h3>Linux Privilege Escalation</h3>
+
+                        <p>
+                            Investigation of sudo activity, new account creation,
+                            root access, and password modification detected on a
+                            monitored Ubuntu endpoint.
+                        </p>
+
+                        <div class="case-tags">
+                            <span>Wazuh</span>
+                            <span>Linux</span>
+                            <span>Privilege Escalation</span>
+                        </div>
+
+                        <a href="ir-2026-001.html" class="card-link">
+                            View Investigation →
+                        </a>
+
+                    </article>
+
+
+                    <article class="investigation-card">
+
+                        <div class="investigation-meta">
+                            <span class="case-number">IR-2026-002</span>
+                            <span class="severity-badge severity-medium">
+                                Medium
+                            </span>
+                        </div>
+
+                        <h3>SSH Brute Force Detection</h3>
+
+                        <p>
+                            Analysis of repeated SSH authentication failures from
+                            a Kali Linux source against a monitored Ubuntu target.
+                        </p>
+
+                        <div class="case-tags">
+                            <span>Credential Access</span>
+                            <span>SSH</span>
+                            <span>T1110.001</span>
+                        </div>
+
+                        <!-- Update this filename if your IR-2026-002 page
+                             uses a different name. -->
+                        <a href="ir-2026-002.html" class="card-link">
+                            View Investigation →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             ROADMAP
+        =================================================== -->
+        <section class="content-section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Development Roadmap</p>
+                    <h2>Planned Lab Expansion</h2>
+
+                    <p class="section-description">
+                        The environment will continue evolving as new security
+                        controls, operating systems, and monitoring platforms are
+                        introduced.
+                    </p>
+                </div>
+
+                <div class="roadmap">
+
+                    <article class="roadmap-item completed">
+                        <div class="roadmap-marker"></div>
+                        <div>
+                            <span class="roadmap-status">Completed</span>
+                            <h3>Wazuh SIEM Deployment</h3>
+                            <p>
+                                Deploy the Wazuh manager and connect monitored
+                                Linux endpoints.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item completed">
+                        <div class="roadmap-marker"></div>
+                        <div>
+                            <span class="roadmap-status">Completed</span>
+                            <h3>Attack Simulation Environment</h3>
+                            <p>
+                                Configure Kali Linux and Metasploitable2 for
+                                isolated offensive-security exercises.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item active">
+                        <div class="roadmap-marker"></div>
+                        <div>
+                            <span class="roadmap-status">In Progress</span>
+                            <h3>Alert Tuning and Investigation Library</h3>
+                            <p>
+                                Reduce unnecessary alert noise and expand the
+                                collection of documented SOC investigations.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item planned">
+                        <div class="roadmap-marker"></div>
+                        <div>
+                            <span class="roadmap-status">Planned</span>
+                            <h3>Suricata IDS Integration</h3>
+                            <p>
+                                Add network intrusion detection and correlate
+                                network alerts with Wazuh endpoint telemetry.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item planned">
+                        <div class="roadmap-marker"></div>
+                        <div>
+                            <span class="roadmap-status">Planned</span>
+                            <h3>pfSense and VLAN Segmentation</h3>
+                            <p>
+                                Introduce firewall policy enforcement and separate
+                                management, lab, DMZ, IoT, and guest networks.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item planned">
+                        <div class="roadmap-marker"></div>
+                        <div>
+                            <span class="roadmap-status">Planned</span>
+                            <h3>Windows and Active Directory</h3>
+                            <p>
+                                Add Windows endpoints and domain services for
+                                identity, authentication, and lateral-movement
+                                investigations.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             FINAL CTA
+        =================================================== -->
+        <section class="home-lab-cta">
+            <div class="container">
+
+                <div class="cta-content">
+                    <div>
+                        <p class="eyebrow">CE Security Portfolio</p>
+                        <h2>See the Lab in Action</h2>
+
+                        <p>
+                            Review the incident investigations created from
+                            controlled activity inside this environment.
+                        </p>
+                    </div>
+
+                    <a href="projects.html" class="button button-primary">
+                        Explore Security Projects
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <div>
+                <strong>CE Security</strong>
+                <p>Build | Secure | Monitor</p>
+            </div>
+
+            <p>
+                © 2026 Clinton Etienne. Built as a cybersecurity
+                education and professional portfolio.
+            </p>
+
         </div>
+    </footer>
 
-        <div class="stat-card">
-          <h3>4+</h3>
-          <p>Virtual Machines</p>
-        </div>
-
-        <div class="stat-card">
-          <h3>Linux</h3>
-          <p>Primary Endpoint Focus</p>
-        </div>
-
-        <div class="stat-card">
-          <h3>MITRE</h3>
-          <p>Detection Mapping</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <p class="eyebrow">Architecture</p>
-        <h2>Lab Network Design</h2>
-      </div>
-
-      <div class="lab-content">
-        <div>
-          <h3>Network Layout</h3>
-          <p>
-            The lab uses VirtualBox networking to separate internet access from the
-            internal host-only lab network. Kali Linux is used as the attacker system,
-            while Ubuntu and vulnerable lab machines generate logs and security events
-            that are monitored by Wazuh.
-          </p>
-
-          <p>
-            This design allows safe attack simulation, endpoint monitoring, and alert
-            investigation without exposing vulnerable systems to the public internet.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <pre style="white-space: pre-wrap; color: #c0c6cc; font-family: Consolas, monospace;">
-Internet / NAT
-     │
-     ▼
-VirtualBox Lab Network
-     │
-     ├── Kali Linux Attacker
-     │   └── Nmap / Metasploit / Testing
-     │
-     ├── Ubuntu Target Endpoint
-     │   └── Wazuh Agent / Auth Logs
-     │
-     ├── Metasploitable2
-     │   └── Vulnerable Services
-     │
-     └── Wazuh Manager
-         └── Dashboard / Alerts / Rules
-          </pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <p class="eyebrow">Systems</p>
-        <h2>Virtual Machine Inventory</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="card-topline">
-            <span class="incident-id">SIEM-01</span>
-            <span class="badge medium">Active</span>
-          </div>
-
-          <h3>Wazuh Manager</h3>
-          <p>
-            Central monitoring platform used to collect endpoint events, display alerts,
-            map activity to MITRE ATT&CK, and support SOC-style investigations.
-          </p>
-
-          <div class="card-meta">
-            <span><strong>Role:</strong> SIEM / Security Monitoring</span>
-            <span><strong>Focus:</strong> Alerts, agents, rules, dashboards</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-topline">
-            <span class="incident-id">ATTACK-01</span>
-            <span class="badge medium">Active</span>
-          </div>
-
-          <h3>Kali Linux</h3>
-          <p>
-            Attacker workstation used to generate realistic events such as SSH failures,
-            reconnaissance activity, exploitation attempts, and traffic for investigation.
-          </p>
-
-          <div class="card-meta">
-            <span><strong>Tools:</strong> Nmap, Metasploit, SSH, Linux CLI</span>
-            <span><strong>Focus:</strong> Attack simulation and detection validation</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-topline">
-            <span class="incident-id">ENDPOINT-01</span>
-            <span class="badge medium">Active</span>
-          </div>
-
-          <h3>Ubuntu Target</h3>
-          <p>
-            Monitored Linux endpoint used for authentication events, account changes,
-            privilege escalation testing, SSH monitoring, and Wazuh alert generation.
-          </p>
-
-          <div class="card-meta">
-            <span><strong>Role:</strong> Monitored endpoint</span>
-            <span><strong>Focus:</strong> Auth logs, sudo activity, user changes</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-topline">
-            <span class="incident-id">VULN-01</span>
-            <span class="badge medium">Lab Only</span>
-          </div>
-
-          <h3>Metasploitable2</h3>
-          <p>
-            Intentionally vulnerable machine used to study attacker behavior,
-            reconnaissance, exploitation paths, and future detection engineering
-            opportunities.
-          </p>
-
-          <div class="card-meta">
-            <span><strong>Tools:</strong> Vulnerable services, service enumeration</span>
-            <span><strong>Focus:</strong> Exploitation and detection opportunities</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <p class="eyebrow">Workflow</p>
-        <h2>SOC Investigation Process</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Attack Simulation</h3>
-          <p>
-            Security events are generated from controlled lab activity such as failed SSH
-            logins, privilege escalation testing, account changes, reconnaissance, and
-            vulnerable service exploitation.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Detection and Alert Review</h3>
-          <p>
-            Wazuh alerts are reviewed to identify the affected endpoint, source IP,
-            rule level, MITRE tactic, event details, and supporting log evidence.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Incident Documentation</h3>
-          <p>
-            Findings are documented in professional incident reports containing an
-            executive summary, timeline, indicators of compromise, MITRE mapping,
-            response actions, and lessons learned.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Portfolio Case Files</h3>
-          <p>
-            Completed investigations are converted into portfolio case files to
-            demonstrate hands-on SOC skills, technical analysis, and security
-            documentation ability.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section skills-section">
-      <div class="section-header">
-        <p class="eyebrow">Coverage</p>
-        <h2>Monitoring and Detection Focus</h2>
-      </div>
-
-      <div class="skills-grid">
-        <span>Authentication Monitoring</span>
-        <span>Failed Login Detection</span>
-        <span>Privilege Escalation</span>
-        <span>User Account Changes</span>
-        <span>SSH Brute Force</span>
-        <span>Linux Auth Logs</span>
-        <span>Wazuh Rules</span>
-        <span>MITRE ATT&CK</span>
-        <span>IOC Identification</span>
-        <span>Endpoint Monitoring</span>
-        <span>Network Reconnaissance</span>
-        <span>Incident Response</span>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <p class="eyebrow">Roadmap</p>
-        <h2>Planned Lab Expansion</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Suricata IDS</h3>
-          <p>
-            Add network-based detection to monitor suspicious traffic, exploit attempts,
-            and possible command-and-control behavior.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Windows Endpoint Monitoring</h3>
-          <p>
-            Add Windows event logs and Sysmon data to investigate PowerShell activity,
-            process creation, persistence, and endpoint compromise indicators.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Custom Detection Rules</h3>
-          <p>
-            Build custom Wazuh rules and detection logic for brute force attacks,
-            suspicious commands, privilege escalation, and malware-style behavior.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Threat Hunting Reports</h3>
-          <p>
-            Create structured threat hunting write-ups based on hypotheses, evidence,
-            log queries, findings, and recommended improvements.
-          </p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="footer-logo" />
-    <p><strong>CE Security Monitoring</strong></p>
-    <p>Monitoring • Detection • Incident Response</p>
-    <p>© 2026 Clinton Etienne</p>
-  </footer>
 </body>
 </html>
