@@ -489,3 +489,91 @@ img {
     font-size: 0.9rem;
   }
 }
+/* =========================================================
+   HOME LAB NETWORK DIAGRAM
+========================================================= */
+
+.home-lab-diagram-section .section-header {
+  max-width: 900px;
+}
+
+.home-lab-diagram-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(54, 169, 255, 0.25);
+  border-radius: 14px;
+  background: #07131f;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+.home-lab-diagram-link {
+  display: block;
+  overflow: hidden;
+  background: #07131f;
+}
+
+.home-lab-diagram-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.home-lab-diagram-link:hover .home-lab-diagram-image {
+  transform: scale(1.01);
+  filter: brightness(1.04);
+}
+
+.home-lab-diagram-link:focus-visible {
+  outline: 3px solid #2fa8ff;
+  outline-offset: -3px;
+}
+
+.home-lab-diagram-caption {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(54, 169, 255, 0.18);
+}
+
+.home-lab-diagram-caption strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.home-lab-diagram-caption p {
+  max-width: 1000px;
+  margin: 0;
+  color: #a7b4c0;
+  line-height: 1.7;
+}
+
+.diagram-instruction {
+  display: block;
+  margin-top: 0.75rem;
+  color: #36a9ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+/* Mobile diagram adjustments */
+
+@media (max-width: 700px) {
+  .home-lab-diagram-card {
+    border-radius: 10px;
+  }
+
+  .home-lab-diagram-caption {
+    padding: 1rem;
+  }
+
+  .home-lab-diagram-caption p {
+    font-size: 0.9rem;
+  }
+}
