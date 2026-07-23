@@ -1,54 +1,127 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGCFJRR2Q1"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGCFJRR2Q1"></script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-  gtag('js', new Date());
-  gtag('config', 'G-EGCFJRR2Q1');
-</script>
-  
+    gtag('js', new Date());
+    gtag('config', 'G-EGCFJRR2Q1');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Clinton Etienne | SOC Analyst Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
   <header class="site-header">
     <nav class="navbar">
+
       <a href="index.html" class="nav-brand">
-        <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="nav-logo" />
+        <img
+          src="assets/logo/security-shield.png"
+          alt="CE Security Shield"
+          class="nav-logo"
+        />
+
         <span>Clinton Etienne</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="home-lab.html">Home Lab</a></li>
-        <li><a href="Clinton_Etienne_Resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="index.html" class="active">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="projects.html"
+            data-ga-event="navigation_click"
+            data-ga-label="Projects Navigation"
+            data-ga-content-type="site_navigation"
+            data-ga-content-name="Projects"
+          >
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="home-lab.html"
+            data-ga-event="home_lab_open"
+            data-ga-label="Home Lab Navigation"
+            data-ga-content-type="technical_project"
+            data-ga-content-name="CE Security Home Lab"
+          >
+            Home Lab
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="Clinton_Etienne_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-ga-event="resume_open"
+            data-ga-label="Resume Navigation"
+            data-ga-content-type="resume"
+            data-ga-content-name="Clinton Etienne Resume"
+          >
+            Resume
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#contact"
+            data-ga-event="contact_section_open"
+            data-ga-label="Contact Navigation"
+            data-ga-content-type="site_navigation"
+            data-ga-content-name="Contact Section"
+          >
+            Contact
+          </a>
+        </li>
+
       </ul>
     </nav>
   </header>
 
   <main>
+
     <section class="hero v4-hero">
+
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring Logo" class="hero-logo" />
 
-        <p class="eyebrow">CE Security Monitoring</p>
+        <img
+          src="assets/logo/ce-security-logo.png"
+          alt="CE Security Monitoring Logo"
+          class="hero-logo"
+        />
+
+        <p class="eyebrow">
+          CE Security Monitoring
+        </p>
+
         <h1>Clinton Etienne</h1>
+
         <h2>SOC Analyst Portfolio</h2>
 
         <p class="hero-tagline">
@@ -62,20 +135,55 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="projects.html" class="btn primary-btn">View Investigations</a>
-          <a href="home-lab.html" class="btn secondary-btn">Explore Home Lab</a>
-          <a href="Clinton_Etienne_Resume.pdf" class="btn ghost-btn" target="_blank">Download Resume</a>
+
+          <a
+            href="projects.html"
+            class="btn primary-btn"
+            data-ga-event="investigations_open"
+            data-ga-label="View Investigations Hero Button"
+            data-ga-content-type="incident_investigations"
+            data-ga-content-name="Projects Dashboard"
+          >
+            View Investigations
+          </a>
+
+          <a
+            href="home-lab.html"
+            class="btn secondary-btn"
+            data-ga-event="home_lab_open"
+            data-ga-label="Explore Home Lab Hero Button"
+            data-ga-content-type="technical_project"
+            data-ga-content-name="CE Security Home Lab"
+          >
+            Explore Home Lab
+          </a>
+
+          <a
+            href="Clinton_Etienne_Resume.pdf"
+            class="btn ghost-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-ga-event="resume_download"
+            data-ga-label="Download Resume Hero Button"
+            data-ga-content-type="resume"
+            data-ga-content-name="Clinton Etienne Resume"
+          >
+            Download Resume
+          </a>
+
         </div>
       </div>
     </section>
 
     <section class="soc-overview section">
+
       <div class="section-header">
         <p class="eyebrow">SOC Dashboard</p>
         <h2>Portfolio Overview</h2>
       </div>
 
       <div class="stats-section">
+
         <div class="stat-card">
           <h3>2</h3>
           <p>Incident Reports</p>
@@ -95,17 +203,21 @@
           <h3>Wazuh</h3>
           <p>Primary SIEM</p>
         </div>
+
       </div>
     </section>
 
     <section class="section featured-section">
+
       <div class="section-header">
         <p class="eyebrow">Case Files</p>
         <h2>Featured SOC Investigations</h2>
       </div>
 
       <div class="project-grid">
+
         <article class="project-card incident-card">
+
           <div class="card-topline">
             <span class="incident-id">IR-2026-001</span>
             <span class="badge medium">Medium</span>
@@ -119,15 +231,39 @@
           </p>
 
           <div class="card-meta">
-            <span><strong>Status:</strong> Closed</span>
-            <span><strong>Platform:</strong> Wazuh SIEM</span>
-            <span><strong>Category:</strong> Privilege Escalation</span>
+
+            <span>
+              <strong>Status:</strong>
+              Closed
+            </span>
+
+            <span>
+              <strong>Platform:</strong>
+              Wazuh SIEM
+            </span>
+
+            <span>
+              <strong>Category:</strong>
+              Privilege Escalation
+            </span>
+
           </div>
 
-          <a href="IR-2026-001.html" class="btn primary-btn">View Investigation</a>
+          <a
+            href="IR-2026-001.html"
+            class="btn primary-btn"
+            data-ga-event="investigation_open"
+            data-ga-label="View IR-2026-001"
+            data-ga-content-type="incident_investigation"
+            data-ga-content-name="Linux Privilege Escalation"
+          >
+            View Investigation
+          </a>
+
         </article>
 
         <article class="project-card incident-card">
+
           <div class="card-topline">
             <span class="incident-id">IR-2026-002</span>
             <span class="badge medium">Medium</span>
@@ -141,17 +277,42 @@
           </p>
 
           <div class="card-meta">
-            <span><strong>Status:</strong> Closed</span>
-            <span><strong>Platform:</strong> Wazuh SIEM</span>
-            <span><strong>Category:</strong> Credential Access</span>
+
+            <span>
+              <strong>Status:</strong>
+              Closed
+            </span>
+
+            <span>
+              <strong>Platform:</strong>
+              Wazuh SIEM
+            </span>
+
+            <span>
+              <strong>Category:</strong>
+              Credential Access
+            </span>
+
           </div>
 
-          <a href="IR-2026_002_SSH_Brute_Force.html" class="btn primary-btn">View Investigation</a>
+          <a
+            href="IR-2026_002_SSH_Brute_Force.html"
+            class="btn primary-btn"
+            data-ga-event="investigation_open"
+            data-ga-label="View IR-2026-002"
+            data-ga-content-type="incident_investigation"
+            data-ga-content-name="SSH Brute Force Detection"
+          >
+            View Investigation
+          </a>
+
         </article>
+
       </div>
     </section>
 
     <section class="section skills-section">
+
       <div class="section-header">
         <p class="eyebrow">Skills</p>
         <h2>Core Skills Demonstrated</h2>
@@ -162,7 +323,7 @@
         <span>Linux Log Analysis</span>
         <span>Windows Security</span>
         <span>Incident Response</span>
-        <span>MITRE ATT&CK</span>
+        <span>MITRE ATT&amp;CK</span>
         <span>SSH Monitoring</span>
         <span>Threat Detection</span>
         <span>IOC Identification</span>
@@ -171,9 +332,11 @@
         <span>Security Documentation</span>
         <span>Network Fundamentals</span>
       </div>
+
     </section>
 
     <section class="section contact-section" id="contact">
+
       <div class="section-header">
         <p class="eyebrow">Contact</p>
         <h2>Connect With Me</h2>
@@ -185,20 +348,83 @@
       </p>
 
       <div class="contact-links">
-        <a href="mailto:cjetienne05@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/Clinton-Etienne" target="_blank">LinkedIn</a>
-        <a href="https://github.com/cjetienne05" target="_blank">GitHub</a>
-        <a href="Clinton_Etienne_Resume.pdf" target="_blank">Resume</a>
+
+        <a
+          href="mailto:cjetienne05@gmail.com"
+          data-ga-event="contact_click"
+          data-ga-label="Email Contact"
+          data-ga-content-type="contact"
+          data-ga-content-name="Email"
+        >
+          Email
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/Clinton-Etienne"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga-event="linkedin_click"
+          data-ga-label="LinkedIn Profile"
+          data-ga-content-type="social_profile"
+          data-ga-content-name="Clinton Etienne LinkedIn"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/cjetienne05"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga-event="github_click"
+          data-ga-label="GitHub Profile"
+          data-ga-content-type="technical_profile"
+          data-ga-content-name="Clinton Etienne GitHub"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="Clinton_Etienne_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga-event="resume_download"
+          data-ga-label="Resume Contact Link"
+          data-ga-content-type="resume"
+          data-ga-content-name="Clinton Etienne Resume"
+        >
+          Resume
+        </a>
+
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="footer-logo" />
-    <p><strong>CE Security Monitoring</strong></p>
-    <p>Monitoring • Detection • Incident Response</p>
-    <p>© 2026 Clinton Etienne</p>
+
+    <img
+      src="assets/logo/security-shield.png"
+      alt="CE Security Shield"
+      class="footer-logo"
+    />
+
+    <p>
+      <strong>CE Security Monitoring</strong>
+    </p>
+
+    <p>
+      Monitoring • Detection • Incident Response
+    </p>
+
+    <p>
+      © 2026 Clinton Etienne
+    </p>
+
   </footer>
+
   <script src="analytics-events.js"></script>
+
 </body>
+
 </html>
+```
