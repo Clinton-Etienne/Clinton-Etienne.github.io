@@ -18,24 +18,138 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IR-2026-002 | SSH Brute Force Detection</title>
+
+  <meta
+    name="description"
+    content="Review a Wazuh SIEM investigation of repeated SSH brute-force attempts from Kali Linux against an Ubuntu server, including evidence and response actions."
+  />
+  <meta name="author" content="Clinton Etienne" />
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+
+  <link
+    rel="canonical"
+    href="https://clinton-etienne.github.io/IR-2026_002_SSH_Brute_Force.html"
+  />
+
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Clinton Etienne SOC Analyst Portfolio" />
+  <meta property="og:title" content="SSH Brute Force Investigation | Wazuh SIEM" />
+  <meta
+    property="og:description"
+    content="A hands-on SOC investigation of repeated SSH password-guessing attempts from Kali Linux against an Ubuntu server monitored by Wazuh SIEM."
+  />
+  <meta
+    property="og:url"
+    content="https://clinton-etienne.github.io/IR-2026_002_SSH_Brute_Force.html"
+  />
+  <meta
+    property="og:image"
+    content="https://clinton-etienne.github.io/assets/logo/ce-security-github-banner.png"
+  />
+  <meta
+    property="og:image:alt"
+    content="CE Security monitoring, detection, response, and protection banner"
+  />
+  <meta property="og:image:width" content="1983" />
+  <meta property="og:image:height" content="793" />
+  <meta property="article:author" content="Clinton Etienne" />
+  <meta property="article:modified_time" content="2026-08-27" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SSH Brute Force Investigation | Wazuh SIEM" />
+  <meta
+    name="twitter:description"
+    content="A hands-on SOC investigation of repeated SSH password-guessing attempts from Kali Linux against an Ubuntu server monitored by Wazuh SIEM."
+  />
+  <meta
+    name="twitter:image"
+    content="https://clinton-etienne.github.io/assets/logo/ce-security-github-banner.png"
+  />
+  <meta
+    name="twitter:image:alt"
+    content="CE Security monitoring, detection, response, and protection banner"
+  />
+
+  <title>SSH Brute Force Investigation | Wazuh SIEM</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://clinton-etienne.github.io/IR-2026_002_SSH_Brute_Force.html#article",
+    "url": "https://clinton-etienne.github.io/IR-2026_002_SSH_Brute_Force.html",
+    "mainEntityOfPage": "https://clinton-etienne.github.io/IR-2026_002_SSH_Brute_Force.html",
+    "headline": "SSH Brute Force Investigation",
+    "alternativeHeadline": "Incident Report IR-2026-002",
+    "description": "A Wazuh SIEM investigation of repeated SSH password-guessing attempts from Kali Linux against a monitored Ubuntu server, including evidence, MITRE ATT&CK mapping, and response actions.",
+    "image": "https://clinton-etienne.github.io/assets/logo/ce-security-github-banner.png",
+    "dateModified": "2026-08-27",
+    "author": {
+      "@type": "Person",
+      "@id": "https://clinton-etienne.github.io/#clinton-etienne",
+      "name": "Clinton Etienne"
+    },
+    "publisher": {
+      "@type": "Person",
+      "@id": "https://clinton-etienne.github.io/#clinton-etienne",
+      "name": "Clinton Etienne"
+    },
+    "about": [
+      "Wazuh SIEM",
+      "SSH brute force",
+      "Password guessing",
+      "Linux authentication logs",
+      "MITRE ATT&CK T1110.001",
+      "Incident response"
+    ],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://clinton-etienne.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SOC Analyst Projects",
+          "item": "https://clinton-etienne.github.io/projects.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SSH Brute Force Investigation",
+          "item": "https://clinton-etienne.github.io/IR-2026_002_SSH_Brute_Force.html"
+        }
+      ]
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="site-header">
     <nav class="navbar">
-      <a href="index.html" class="nav-brand">
+      <a href="/" class="nav-brand">
         <img src="assets/logo/security-shield.png" alt="CE Security Shield" class="nav-logo" />
         <span>Clinton Etienne</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="home-lab.html">Home Lab</a></li>
-        <li><a href="resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="Clinton_Etienne_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -48,8 +162,8 @@
         <img src="assets/logo/ce-security-logo.png" alt="CE Security Monitoring" class="hero-logo" />
 
         <p class="eyebrow">Incident Report</p>
-        <h1>IR-2026-002</h1>
-        <h2>SSH Brute Force Detection</h2>
+        <h1>SSH Brute Force Detection</h1>
+        <h2>Wazuh SIEM Investigation • IR-2026-002</h2>
 
         <p class="hero-summary">
           Investigation of repeated failed SSH authentication attempts detected by Wazuh
@@ -57,7 +171,7 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="assets/reports/IR-2026-002_SSH_Brute_Force.pdf" class="btn primary-btn" target="_blank">Download PDF</a>
+          <a href="assets/reports/IR-2026-002_SSH_Brute_Force.pdf" class="btn primary-btn" target="_blank" rel="noopener noreferrer">Download PDF</a>
           <a href="projects.html" class="btn secondary-btn">Back to Projects</a>
         </div>
       </div>
@@ -159,7 +273,7 @@
 
     <section class="section">
       <div class="section-header">
-        <p class="eyebrow">MITRE ATT&CK</p>
+        <p class="eyebrow">MITRE ATT&amp;CK</p>
         <h2>Technique Mapping</h2>
       </div>
 
@@ -222,7 +336,7 @@
           <h3>Skills Demonstrated</h3>
           <p>
             Wazuh SIEM analysis, Linux authentication log review, SSH monitoring,
-            MITRE ATT&CK mapping, IOC identification, and incident documentation.
+            MITRE ATT&amp;CK mapping, IOC identification, and incident documentation.
           </p>
         </article>
       </div>
