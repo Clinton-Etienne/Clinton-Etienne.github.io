@@ -275,6 +275,10 @@ img {
   gap: 24px;
 }
 
+.featured-section .project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .about-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -309,6 +313,26 @@ img {
   color: var(--text-muted);
 }
 
+.incident-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.incident-card .card-meta {
+  margin-top: auto;
+}
+
+.incident-card .btn {
+  align-self: flex-start;
+}
+
+.development-card {
+  border-style: dashed;
+  background:
+    radial-gradient(circle at top right, rgba(0, 155, 255, 0.12), transparent 40%),
+    linear-gradient(180deg, rgba(26, 31, 38, 0.92), rgba(12, 18, 26, 0.92));
+}
+
 .card-topline {
   display: flex;
   align-items: center;
@@ -328,12 +352,19 @@ img {
   border-radius: 999px;
   font-size: 0.76rem;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .badge.medium {
   background: rgba(255, 193, 7, 0.14);
   color: #ffd166;
   border: 1px solid rgba(255, 193, 7, 0.35);
+}
+
+.badge.development {
+  background: rgba(0, 155, 255, 0.12);
+  color: #72c7ff;
+  border: 1px solid rgba(0, 155, 255, 0.4);
 }
 
 .card-meta {
@@ -402,6 +433,11 @@ img {
   text-align: center;
 }
 
+.contact-section > p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .contact-links {
   margin-top: 24px;
   display: flex;
@@ -457,6 +493,7 @@ img {
 
   .stats-section,
   .project-grid,
+  .featured-section .project-grid,
   .about-grid,
   .lab-content {
     grid-template-columns: 1fr;
@@ -476,12 +513,22 @@ img {
     max-width: 320px;
   }
 
+  .hero .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+  }
+
   .hero-buttons {
     flex-direction: column;
   }
 
   .btn {
     width: 100%;
+  }
+
+  .incident-card .btn {
+    align-self: stretch;
   }
 
   .nav-links {
