@@ -21,10 +21,111 @@
 
   <meta
     name="description"
-    content="CE Security incident report documenting Linux privilege escalation activity detected with Wazuh SIEM."
+    content="Review a Wazuh SIEM investigation of Linux privilege escalation, suspicious account changes, authentication events, MITRE ATT&amp;CK mapping, and response actions."
   />
 
-  <title>IR-2026-001 | Linux Privilege Escalation</title>
+  <meta name="author" content="Clinton Etienne" />
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+
+  <link rel="canonical" href="https://clinton-etienne.github.io/IR-2026-001.html" />
+
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Clinton Etienne SOC Analyst Portfolio" />
+  <meta property="og:title" content="Linux Privilege Escalation Investigation | Wazuh SIEM" />
+  <meta
+    property="og:description"
+    content="A hands-on SOC investigation of Linux account changes, sudo activity, root access, and password modification events detected by Wazuh SIEM."
+  />
+  <meta property="og:url" content="https://clinton-etienne.github.io/IR-2026-001.html" />
+  <meta
+    property="og:image"
+    content="https://clinton-etienne.github.io/assets/logo/ce-security-github-banner.png"
+  />
+  <meta
+    property="og:image:alt"
+    content="CE Security monitoring, detection, response, and protection banner"
+  />
+  <meta property="og:image:width" content="1983" />
+  <meta property="og:image:height" content="793" />
+  <meta property="article:author" content="Clinton Etienne" />
+  <meta property="article:modified_time" content="2026-08-27" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Linux Privilege Escalation Investigation | Wazuh SIEM" />
+  <meta
+    name="twitter:description"
+    content="A hands-on SOC investigation of Linux account changes, sudo activity, root access, and password modification events detected by Wazuh SIEM."
+  />
+  <meta
+    name="twitter:image"
+    content="https://clinton-etienne.github.io/assets/logo/ce-security-github-banner.png"
+  />
+  <meta
+    name="twitter:image:alt"
+    content="CE Security monitoring, detection, response, and protection banner"
+  />
+
+  <title>Linux Privilege Escalation Investigation | Wazuh SIEM</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://clinton-etienne.github.io/IR-2026-001.html#article",
+    "url": "https://clinton-etienne.github.io/IR-2026-001.html",
+    "mainEntityOfPage": "https://clinton-etienne.github.io/IR-2026-001.html",
+    "headline": "Linux Privilege Escalation Investigation",
+    "alternativeHeadline": "Incident Report IR-2026-001",
+    "description": "A Wazuh SIEM investigation of Linux account changes, privilege elevation, root access, authentication events, MITRE ATT&CK mapping, and response actions.",
+    "image": "https://clinton-etienne.github.io/assets/logo/ce-security-github-banner.png",
+    "dateModified": "2026-08-27",
+    "author": {
+      "@type": "Person",
+      "@id": "https://clinton-etienne.github.io/#clinton-etienne",
+      "name": "Clinton Etienne"
+    },
+    "publisher": {
+      "@type": "Person",
+      "@id": "https://clinton-etienne.github.io/#clinton-etienne",
+      "name": "Clinton Etienne"
+    },
+    "about": [
+      "Wazuh SIEM",
+      "Linux privilege escalation",
+      "Incident response",
+      "Linux authentication logs",
+      "MITRE ATT&CK"
+    ],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://clinton-etienne.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SOC Analyst Projects",
+          "item": "https://clinton-etienne.github.io/projects.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Linux Privilege Escalation Investigation",
+          "item": "https://clinton-etienne.github.io/IR-2026-001.html"
+        }
+      ]
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -38,7 +139,7 @@
   <header class="site-header">
     <nav class="navbar">
 
-      <a href="index.html" class="nav-brand">
+      <a href="/" class="nav-brand">
         <img
           src="assets/logo/security-shield.png"
           alt="CE Security Shield"
@@ -49,7 +150,7 @@
 
       <ul class="nav-links">
         <li>
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
         </li>
 
         <li>
@@ -71,7 +172,7 @@
         </li>
 
         <li>
-          <a href="index.html#contact">Contact</a>
+          <a href="/#contact">Contact</a>
         </li>
       </ul>
 
@@ -98,9 +199,9 @@
 
         <p class="eyebrow">Incident Report</p>
 
-        <h1>IR-2026-001</h1>
+        <h1>Linux Privilege Escalation</h1>
 
-        <h2>Linux Privilege Escalation</h2>
+        <h2>Wazuh SIEM Investigation • IR-2026-001</h2>
 
         <p class="hero-tagline">
           Security Monitoring • Threat Detection • Incident Response
@@ -477,7 +578,7 @@
 
 
     <!-- =====================================================
-         MITRE ATT&CK
+         MITRE ATT&amp;CK
          ===================================================== -->
 
     <section class="section">
@@ -799,7 +900,7 @@
         </a>
 
         <a
-          href="assets/IR-2026-001_Linux_Privilege_Escalation.pdf"
+          href="assets/reports/IR-2026-001_Linux_Privilege_Escalation_CE_Security.pdf"
           class="btn ghost-btn"
           target="_blank"
           rel="noopener noreferrer"
